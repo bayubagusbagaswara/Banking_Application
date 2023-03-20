@@ -1,6 +1,6 @@
 package com.bbb.bankingapplication.model;
 
-import com.bbb.bankingapplication.model.base.SoftDelete;
+import com.bbb.bankingapplication.model.base.UserAudit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Bank extends SoftDelete {
+public class Bank extends UserAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
