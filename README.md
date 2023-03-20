@@ -1,5 +1,8 @@
-# base-project-spring-boot
-Base Project Spring Boot
+# Banking Application
+
+Memiliki Fitur
+- Pembukaan tabungan deposito
+- Transfer
 
 # Technologies
 
