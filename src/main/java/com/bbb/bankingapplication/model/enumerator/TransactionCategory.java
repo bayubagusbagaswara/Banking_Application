@@ -1,0 +1,22 @@
+package com.bbb.bankingapplication.model.enumerator;
+
+public enum TransactionCategory {
+
+    TRANSFER_ALL,
+    TRANSFER_ON_US,
+    TRANSFER_OFF_US,
+    TRANSFER_ONLINE,
+    TRANSFER_BI_FAST,
+    TRANSFER_RTGS,
+    TRANSFER_VA,
+    TRANSFER_SWIFT,
+
+    BILL_PAYMENT_TICKET,
+    BILL_PAYMENT_TRAIN_TICKET,
+    BILL_PAYMENT_FLIGHT_TICKET,
+    BILL_PAYMENT_GARUDA_TICKET,
+    BILL_PAYMENT_PLN,
+    BILL_PAYMENT_PAKET_DATA,
+    BILL_PAYMENT_PULSA
+
+}
