@@ -35,4 +35,10 @@ public class DepositDetailDTO {
 
     private String fromAccountOwnerName;
 
+    private String depositNameProduct;
+
+    private String bilyet;
+
+    private BigDecimal efektifBagiHasil;
+
 }
