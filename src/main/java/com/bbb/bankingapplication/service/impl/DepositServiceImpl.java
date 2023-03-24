@@ -1,0 +1,45 @@
+package com.bbb.bankingapplication.service.impl;
+
+import com.bbb.bankingapplication.dto.OpeningDepositRequest;
+import com.bbb.bankingapplication.dto.OpeningDepositResponse;
+import com.bbb.bankingapplication.service.DepositService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+@Slf4j
+@Service
+public class DepositServiceImpl implements DepositService {
+
+    @Override
+    public OpeningDepositResponse openingDeposit(OpeningDepositRequest request) {
+        log.info("Start opening deposit : {}", request);
+        String modulNameNisbahBank = "NISBAH_BAGI_HASIL_BANK";
+        String modulNameNisbahNasabah = "NISBAH_BAGI_HASIL_NASABAH";
+
+        String nisbahBankDefault = "75";
+        String nisbahNasabahDefault = "25";
+
+        if (request.getTimePeriod() == 3) {
+            modulNameNisbahBank = "NISBAH_BAGI_HASIL_BANK_3";
+            modulNameNisbahNasabah = "NISBAH_BAGI_HASIL_NASABAH_3";
+        } else if (request.getTimePeriod() == 6) {
+            modulNameNisbahBank = "NISBAH_BAGI_HASIL_BANK_6";
+            modulNameNisbahNasabah = "NISBAH_BAGI_HASIL_NASABAH_6";
+            nisbahBankDefault = "76";
+            nisbahNasabahDefault = "24";
+        }
+
+        //nisbah
+//        var nisbahBank = parameterManagementService.getSysParamByModuleAndName(InvestAccountConstant.MODULE_DEPOSITO,modulNameNisBank);
+//        var nisbahNasabah = parameterManagementService.getSysParamByModuleAndName(InvestAccountConstant.MODULE_DEPOSITO,modulNameNisNasabah);
+
+        //cek null system param
+//        var valueNisBank = nisbahBank.getValue()==null?nisbahBankDefault:nisbahBank.getValue();
+//        var valueNisNasabah = nisbahNasabah.getValue()==null?NisNasabahDefault:nisbahNasabah.getValue();
+
+
+
+
+        return null;
+    }
+}
