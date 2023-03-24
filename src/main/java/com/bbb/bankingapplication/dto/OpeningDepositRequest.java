@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -23,6 +24,18 @@ public class OpeningDepositRequest implements Serializable {
     private String productCode;
 
     private String systemDeposit;
+    private String depositPurpose;
+    private Long productId;
 
+    private String currency; // IDR, USD
+
+    private String branchCode; // kode cabang
+    private String eventCode;
+    private String referralCode;
+    private int accountIndex;
+
+    private BigDecimal depositAmount;
+
+    private Integer timePeriod; // 6 bulan atau 9 bulan
 
 }
