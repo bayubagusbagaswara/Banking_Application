@@ -26,6 +26,6 @@ public abstract class UserAudit extends DateAudit {
     @Column(name = "updated_by")
     private String updatedBy;
 
-    @Column(name = "is_deleted", nullable = false)
-    private boolean isDeleted = false;
+    @Column(name = "deleted", nullable = false)
+    private boolean deleted = Boolean.FALSE;
 }
