@@ -15,6 +15,6 @@ public interface UserAccountRepository extends JpaRepository<UserAccount, Long> 
             nativeQuery = true)
     Map<String, Object> getDataByAccountNumber(String accountNumber);
 
-    Optional<UserAccount> findByAccountNumberAndIsDeleted(String accountNumber, boolean isDelete);
+    Optional<UserAccount> findByAccountNumberAndDeleted(String accountNumber, boolean isDelete);
 
 }
