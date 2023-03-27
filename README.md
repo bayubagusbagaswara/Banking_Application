@@ -18,3 +18,11 @@ Memiliki Fitur
 # Soft Delete
 - False = 0, artinya data masih ada (belum dihapus)
 - True = 1, (artinya data sudah terhapus)
+
+# Register User
+
+- User harus mendaftarkan dulu data dirinya
+
+# Deposito
+
+- Pembukaan deposito akan disimpan di table Account Deposito User
