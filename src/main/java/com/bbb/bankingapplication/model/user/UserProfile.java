@@ -1,6 +1,7 @@
 package com.bbb.bankingapplication.model.user;
 
 import com.bbb.bankingapplication.model.base.UserAudit;
+import com.bbb.bankingapplication.model.enumerator.Language;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,19 +10,25 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.Date;
+import javax.persistence.UniqueConstraint;
 
 /**
  * Ini untuk biodata user yang inti
  * atau yang digunakan oleh Bank untuk mengenali nasabahnya
+ * CIF adalah Customer Information File, informasi yang berisi data lengkap mengenai Nasabah.
  */
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "user_profile")
+@Table(name = "user_profile", uniqueConstraints = {
+        @UniqueConstraint(name = "user_profile_cif_unique", columnNames = "cif"),
+        @UniqueConstraint(name = "user_profile_email_unique", columnNames = "email")
+})
 @Data
 @Builder
 @NoArgsConstructor
@@ -34,35 +41,16 @@ public class UserProfile extends UserAudit {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "cif")
+    @Column(name = "cif", nullable = false)
     private String cif;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "failed_forgot_password_attempts")
-    private int failedForgotPasswordAttempts;
-
-    @Column(name = "failed_forgot_user_id_attempts")
-    private int failedForgotUserIdAttempts;
-
-    @Column(name = "failed_login_attempts")
-    private int failedLoginAttempts;
-
-    @Column(name = "failed_otp_attempts")
-    private int failedOTPAttempts;
-
-    @Column(name = "failed_soft_token_attempts")
-    private int failedSoftTokenAttempts;
-
-    @Column(name = "first_login")
-    private Boolean firstLogin;
-
-    @Column(name = "language", length = 3)
-    private String language;
-
-    @Column(name = "last_failed_login")
-    private Date lastFailedLogin;
+    // default seperti dibawah tidak bisa otomatis ditulis di table
+    @Column(name = "language", length = 3, columnDefinition="VARCHAR(3) default 'IDN'") // default IDR
+    @Enumerated(EnumType.STRING)
+    private Language language;
 
     @Column(name = "name_alias")
     private String nameAlias;
@@ -70,21 +58,7 @@ public class UserProfile extends UserAudit {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "quick_access")
-    private boolean quickAccess;
+//    @Column(name = "profile_image_url")
+//    private String profileImageUrl;
 
-    @Column(name = "register_atm")
-    private Boolean registerATM;
-
-    @Column(name = "user_status")
-    private int userStatus;
-
-    @Column(name = "profile_image_url")
-    private String profileImageUrl;
-
-    @Column(name = "sid")
-    private String sid;
-
-    @Column(name = "sid_status")
-    private String sidStatus;
 }
