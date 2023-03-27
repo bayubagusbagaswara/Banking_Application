@@ -20,13 +20,13 @@ class UserProfileServiceImplTest {
     @Test
     void createUserProfile() {
         CreateUserProfileRequest request = CreateUserProfileRequest.builder()
-                .cif("123456")
-                .email("albert@mail.com")
-                .nameAlias("AlbertE")
+                .cif("221663")
+                .email("lisa@mail.com")
+                .nameAlias("Lisa12")
                 // enum harus sesuai yang ada di data enumerator Language
                 // dan otomatis akan di UpperCase
-                .language("eng")
-                .phoneNumber("085899551103")
+                .language("idn")
+                .phoneNumber("082211211209")
                 .build();
 
         CreateUserProfileResponse response = userProfileService.createUserProfile(request);
