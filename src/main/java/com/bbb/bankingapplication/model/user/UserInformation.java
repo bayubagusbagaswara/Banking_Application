@@ -40,7 +40,6 @@ public class UserInformation extends UserAudit {
     @Column(name = "id")
     private Long id;
 
-    // relation OneToOne with UserProfile
     @JsonIgnore
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
@@ -93,7 +92,7 @@ public class UserInformation extends UserAudit {
     private String jobPosition;
 
     @Column(name = "id_card_number")
-    private String idCardNumber;
+    private String idCardNumber; // no induk karyawan
 
     @Column(name = "phone_home")
     private String phoneHome;
