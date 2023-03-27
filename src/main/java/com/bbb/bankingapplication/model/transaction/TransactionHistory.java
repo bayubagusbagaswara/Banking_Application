@@ -83,6 +83,6 @@ public class TransactionHistory extends UserAudit {
 
     private String toBankName;
 
-    @Column(name = "COMMISSION_AMOUNT", columnDefinition="NUMBER(19,2) default '0'")
-    private BigDecimal commissionAmount;
+//    @Column(name = "COMMISSION_AMOUNT", columnDefinition="NUMBER(19,2) default '0'")
+//    private BigDecimal commissionAmount;
 }
