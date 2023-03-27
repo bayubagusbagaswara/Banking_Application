@@ -1,4 +1,4 @@
-package com.bbb.bankingapplication.model;
+package com.bbb.bankingapplication.model.user;
 
 import com.bbb.bankingapplication.model.base.UserAudit;
 import lombok.*;
