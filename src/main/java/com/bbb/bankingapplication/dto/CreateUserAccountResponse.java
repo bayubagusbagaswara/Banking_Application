@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -26,4 +28,8 @@ public class CreateUserAccountResponse {
     private String productCode;
 
     private String currencyCode;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 }
