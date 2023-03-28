@@ -37,6 +37,8 @@ public class DepositServiceImpl implements DepositService {
 //        var valueNisBank = nisbahBank.getValue()==null?nisbahBankDefault:nisbahBank.getValue();
 //        var valueNisNasabah = nisbahNasabah.getValue()==null?NisNasabahDefault:nisbahNasabah.getValue();
 
+        // biasanya memilih deposit dengan ketentuan bagi hasil yang berbeda dengan jangka waktu juga berbeda
+        // karena itu nanti akan masuk dalam perhitungan bagi hasil dalam setahun
 
 
 
