@@ -91,8 +91,8 @@ public class UserInformation extends UserAudit {
     @Column(name = "job_position")
     private String jobPosition;
 
-    @Column(name = "id_card_number")
-    private String idCardNumber; // no induk karyawan
+    @Column(name = "card_number_id")
+    private String cardNumberId; // no induk karyawan
 
     @Column(name = "phone_home")
     private String phoneHome;
