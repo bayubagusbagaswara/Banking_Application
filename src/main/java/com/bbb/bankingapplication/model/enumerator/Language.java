@@ -1,6 +1,18 @@
 package com.bbb.bankingapplication.model.enumerator;
 
 public enum Language {
-    IDN,
-    ENG
+    INDONESIA("IDN"),
+    ENGLISH("ENG"),
+    IDN("IDN"),
+    ENG("ENG");
+
+    private final String languageName;
+
+    Language(String languageName) {
+        this.languageName = languageName;
+    }
+
+    public String getLanguageName() {
+        return languageName;
+    }
 }
