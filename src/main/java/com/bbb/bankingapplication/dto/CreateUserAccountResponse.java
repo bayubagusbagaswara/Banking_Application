@@ -10,4 +10,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateUserAccountResponse {
+
+    private String id;
+
+    private String userProfileId;
+
+    private String accountNumber;
+
+    private String accountStatus;
+
+    private String productName;
+
+    private String productType;
+
+    private String productCode;
+
+    private String currencyCode;
 }
