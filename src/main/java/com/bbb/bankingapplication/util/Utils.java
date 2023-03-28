@@ -10,6 +10,7 @@ public class Utils {
         return false;
     }
 
+    // change 08 to 62
     public static String substitutePhonePrefix(String phone) {
         if (phone.startsWith("08")) return "62".concat(phone.substring(1));
         return phone;
