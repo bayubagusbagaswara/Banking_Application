@@ -15,6 +15,8 @@ public class CreateUserAccountRequest {
 
     private String accountStatus;
 
+    private String productName;
+
     private String productType;
 
     private String productCode;
