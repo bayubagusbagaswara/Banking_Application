@@ -62,5 +62,6 @@ public class UserAccount extends UserAudit {
     @Column(name = "product_code")
     private String productCode; // code produk
 
+    @Column(name = "currency_code")
     private String currencyCode; // mata uang yang digunakn untuk produk
 }
