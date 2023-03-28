@@ -9,10 +9,10 @@ import java.util.Optional;
 @Repository
 public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 
-    Optional<UserProfile> findByCifAndIsDeletedFalse(String cif);
+    Optional<UserProfile> findByCifAndDeletedFalse(String cif);
 
     default Optional<UserProfile> findByCif(String cif) {
-        return findByCifAndIsDeletedFalse(cif);
+        return findByCifAndDeletedFalse(cif);
     }
 
 }
