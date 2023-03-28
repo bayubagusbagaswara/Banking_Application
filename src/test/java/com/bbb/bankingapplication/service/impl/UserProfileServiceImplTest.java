@@ -21,8 +21,8 @@ class UserProfileServiceImplTest {
     void createUserProfile() {
         CreateUserProfileRequest request = CreateUserProfileRequest.builder()
                 .cif("221663")
-                .email("lisa@mail.com")
-                .nameAlias("Lisa12")
+                .email("bayu@mail.com")
+                .nameAlias("Bayu12")
                 // enum harus sesuai yang ada di data enumerator Language
                 // dan otomatis akan di UpperCase
                 .language("idn")
