@@ -1,0 +1,10 @@
+{
+  "id": "number",
+  "userProfileId": "number",
+  "accountNumber": "string",
+  "accountStatus": "string",
+  "productName": "string",
+  "productType": "string",
+  "productCode": "string",
+  "currencyCode": "string"
+}

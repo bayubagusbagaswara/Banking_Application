@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "cif": "string",
+  "email": "string",
+  "language": "string",
+  "nameAlias": "string",
+  "phoneNumber": "string"
+}
