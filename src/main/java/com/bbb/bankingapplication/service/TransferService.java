@@ -5,5 +5,5 @@ import java.math.BigDecimal;
 public interface TransferService {
 
     // fromAccount, toAccount, amount
-    void transfer(Long formAccountId, Long toAccountId, BigDecimal amount);
+    void transfer(Long fromAccountId, Long toAccountId, BigDecimal amount);
 }
