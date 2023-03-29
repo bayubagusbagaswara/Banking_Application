@@ -12,4 +12,14 @@ public interface BankRepository extends JpaRepository<Bank, Long> {
 
     @Query(value = "SELECT * FROM Bank b WHERE b.bankCode = :bankCode", nativeQuery = true)
     Optional<Bank> findByBankCode(String bankCode);
+
+    @Query(value = "SELECT * FROM Bank b WHERE b.bankName = :bankName", nativeQuery = true)
+    Optional<Bank> findByBankName(String bankName);
+
+    @Query("SELECT * FROM Bank b WHERE b.bankShortName = :bankShortName")
+    Optional<Bank> findByBankShortName(String bankShortName);
+
+    @Query("SELECT * FROM Bank b WHERE b.swiftCode = :swiftCode")
+    Optional<Bank> findBySwiftCode(String swiftCode);
+
 }
