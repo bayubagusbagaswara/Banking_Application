@@ -6,6 +6,8 @@ import com.bbb.bankingapplication.repository.UserProfileRepository;
 import com.bbb.bankingapplication.service.TransferService;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class TransferServiceImpl implements TransferService {
 
@@ -17,6 +19,20 @@ public class TransferServiceImpl implements TransferService {
         this.userProfileRepository = userProfileRepository;
         this.userAccountRepository = userAccountRepository;
         this.transactionHistoryRepository = transactionHistoryRepository;
+    }
+
+    @Override
+    public void transfer(Long fromAccountId, Long toAccountId, BigDecimal amount) {
+        // cari account formAccount by id
+
+        // cari account toAccount by id
+
+        // tambahkan saldo toAccount dan kurangi saldo fromAccount
+
+        // simpan transaction di TransactionHistory untuk fromAccount dan toAccount
+
+
+
     }
 
     // userProfile
