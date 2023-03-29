@@ -1,4 +1,4 @@
-package com.bbb.bankingapplication.dto;
+package com.bbb.bankingapplication.dto.deposit;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ public class OpeningDepositRequest implements Serializable {
 
     private static final long serialVersionUID = -3014706647039717878L;
 
-    @NotBlank(message = "M PIN must not be blank")
+    @NotBlank(message = "M-PIN must not be blank")
     private String mPin;
 
     @NotBlank(message = "Product Code must not be blank")

@@ -1,4 +1,4 @@
-package com.bbb.bankingapplication.dto;
+package com.bbb.bankingapplication.dto.deposit;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
