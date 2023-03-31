@@ -33,3 +33,7 @@ Memiliki Fitur
   @SequenceGenerator(name = "SEQ_GEN", sequenceName = "SEQ_USER", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GEN")
   private Long id;
+
+
+# Convert Date to String
+response.setTransactionDate(DateUtil.convertDate(transaction.getTransactionDate().getTime(), "yyyy-MM-dd HH:mm:ss"));
