@@ -1,5 +1,6 @@
 package com.bbb.bankingapplication.service.impl;
 
+import com.bbb.bankingapplication.model.user.UserAccount;
 import com.bbb.bankingapplication.repository.TransactionHistoryRepository;
 import com.bbb.bankingapplication.repository.UserAccountRepository;
 import com.bbb.bankingapplication.repository.UserProfileRepository;
@@ -24,8 +25,12 @@ public class TransferServiceImpl implements TransferService {
     @Override
     public void transfer(Long fromAccountId, Long toAccountId, BigDecimal amount) {
         // cari account formAccount by id
+        UserAccount fromAccount = userAccountRepository.findById(fromAccountId)
+                .orElseThrow(() -> new RuntimeException("From Account not found with id : [" + fromAccountId + "]"));
 
         // cari account toAccount by id
+        UserAccount toAccount = userAccountRepository.findById(toAccountId)
+                .orElseThrow(() -> new RuntimeException("To Account not found with id : [" + toAccountId + "]"));
 
         // tambahkan saldo toAccount dan kurangi saldo fromAccount
 
