@@ -64,6 +64,13 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
+    public BankDTO getBankBySwiftCode(String swiftCode) {
+        Bank bank = bankRepository.findBySwiftCode(swiftCode)
+                .orElseThrow(() -> new RuntimeException("Bank not found with swift code : [" + swiftCode + "]"));
+        return mapToBankDTO(bank);
+    }
+
+    @Override
     public List<BankDTO> getAllBankList() {
         List<Bank> bankList = bankRepository.findAll();
         return mapToBankDTOList(bankList);
