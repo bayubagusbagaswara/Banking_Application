@@ -1,7 +1,9 @@
 package com.bbb.bankingapplication.service.impl;
 
-import com.bbb.bankingapplication.dto.OpeningDepositRequest;
-import com.bbb.bankingapplication.dto.OpeningDepositResponse;
+import com.bbb.bankingapplication.dto.deposit.OpeningDepositRequest;
+import com.bbb.bankingapplication.dto.deposit.OpeningDepositResponse;
+import com.bbb.bankingapplication.dto.deposit.UpdateDepositRequest;
+import com.bbb.bankingapplication.dto.deposit.UpdateDepositResponse;
 import com.bbb.bankingapplication.service.DepositService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -41,6 +43,13 @@ public class DepositServiceImpl implements DepositService {
         // karena itu nanti akan masuk dalam perhitungan bagi hasil dalam setahun
 
 
+
+        return null;
+    }
+
+    @Override
+    public UpdateDepositResponse updateDeposit(UpdateDepositRequest request) {
+        // get list deposit by user profile id
 
         return null;
     }
