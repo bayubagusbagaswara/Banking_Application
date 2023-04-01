@@ -17,6 +17,9 @@ public interface BankService {
     // get bank by code
     BankDTO getBankByCode(String bankCode);
 
+    // get bank by swift code
+    BankDTO getBankBySwiftCode(String swiftCode);
+
     // get list bank
     List<BankDTO> getAllBankList();
 
