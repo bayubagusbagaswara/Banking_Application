@@ -2,6 +2,7 @@ package com.bbb.bankingapplication.service;
 
 import com.bbb.bankingapplication.dto.CreateUserAccountRequest;
 import com.bbb.bankingapplication.dto.CreateUserAccountResponse;
+import com.bbb.bankingapplication.dto.UserAccountDTO;
 
 public interface UserAccountService {
 
@@ -10,5 +11,8 @@ public interface UserAccountService {
 
     // ini membuat rekening
     CreateUserAccountResponse createUserAccount(Long userProfileId, CreateUserAccountRequest request);
+
+    UserAccountDTO getUserAccountById(Long userAccountId);
+
 
 }
