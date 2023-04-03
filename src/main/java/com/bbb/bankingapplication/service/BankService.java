@@ -1,8 +1,6 @@
 package com.bbb.bankingapplication.service;
 
-import com.bbb.bankingapplication.dto.bank.BankDTO;
-import com.bbb.bankingapplication.dto.bank.CreateBankRequest;
-import com.bbb.bankingapplication.dto.bank.CreateBankResponse;
+import com.bbb.bankingapplication.dto.bank.*;
 
 import java.util.List;
 
@@ -24,7 +22,9 @@ public interface BankService {
     List<BankDTO> getAllBankList();
 
     // update bank
+    UpdateBankResponse updateBank(Long bankId, UpdateBankRequest request);
 
 
     // delete bank
+    void deleteBank(Long bankId);
 }
