@@ -47,7 +47,7 @@ public class UserAccount extends UserAudit {
     private UserProfile userProfile;
 
     @Column(name = "account_number", nullable = false)
-    private String accountNumber; // no rekening
+    private String accountNumber; // nomor rekening
 
     @Column(name = "account_status", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -57,11 +57,11 @@ public class UserAccount extends UserAudit {
     private String productName; // nama produk, misal Easy Wadiah memiliki banyak tipe
 
     @Column(name = "product_type")
-    private String productType; // jenis produk
+    private String productType; // jenis produk rekening
 
     @Column(name = "product_code")
-    private String productCode; // code produk
+    private String productCode; // code produk rekening
 
     @Column(name = "currency_code")
-    private String currencyCode; // mata uang yang digunakn untuk produk
+    private String currencyCode; // mata uang yang digunakan untuk produk rekening
 }
