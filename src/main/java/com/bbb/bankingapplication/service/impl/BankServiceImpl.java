@@ -81,7 +81,9 @@ public class BankServiceImpl implements BankService {
 
     @Override
     public void deleteBank(Long bankId) {
-
+        Bank bank = bankRepository.findById(bankId)
+                .orElseThrow(() -> new RuntimeException("Bank not found with id : [" + bankId + "]"));
+        bankRepository.delete(bank);
     }
 
     private static CreateBankResponse mapToBankResponse(Bank bank) {
