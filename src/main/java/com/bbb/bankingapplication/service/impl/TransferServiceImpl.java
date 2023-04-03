@@ -1,5 +1,7 @@
 package com.bbb.bankingapplication.service.impl;
 
+import com.bbb.bankingapplication.dto.transfer.TransferRequestDTO;
+import com.bbb.bankingapplication.dto.transfer.TransferResponseDTO;
 import com.bbb.bankingapplication.model.user.UserAccount;
 import com.bbb.bankingapplication.repository.TransactionHistoryRepository;
 import com.bbb.bankingapplication.repository.UserAccountRepository;
@@ -24,6 +26,9 @@ public class TransferServiceImpl implements TransferService {
 
     @Override
     public void transfer(Long fromAccountId, Long toAccountId, BigDecimal amount) {
+
+        // ini transfer sederhana
+
         // cari account formAccount by id
         UserAccount fromAccount = userAccountRepository.findById(fromAccountId)
                 .orElseThrow(() -> new RuntimeException("From Account not found with id : [" + fromAccountId + "]"));
@@ -37,7 +42,21 @@ public class TransferServiceImpl implements TransferService {
         // simpan transaction di TransactionHistory untuk fromAccount dan toAccount
 
 
+    }
 
+    @Override
+    public TransferResponseDTO transferOnlineInquiry(TransferRequestDTO request) {
+        return null;
+    }
+
+    @Override
+    public TransferResponseDTO transferOnline(TransferRequestDTO request) {
+        return null;
+        // transfer dilakukan ke esb service
+        // setelah berhasil, maka esb akan memberikan response
+        // lalu response itu akan dimapping ke mappingResponse
+        // di mapping response kita setting TransactionStatus
+        // code balikan ESB adalah 00 dan 02. 00 -> SUCCESS, 02 -> SUSPECT, selain itu maka FAILED
     }
 
     // userProfile
