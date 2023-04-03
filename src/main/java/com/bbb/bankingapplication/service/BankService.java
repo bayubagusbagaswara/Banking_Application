@@ -24,7 +24,11 @@ public interface BankService {
     // update bank
     UpdateBankResponse updateBank(Long bankId, UpdateBankRequest request);
 
-
     // delete bank
     void deleteBank(Long bankId);
+
+    // update bulk online switching ini delete semua lalu buat lagi dari awal
+    // service ini untuk membuat bank list sekaligus, tidak satu per satu
+    //
+
 }
