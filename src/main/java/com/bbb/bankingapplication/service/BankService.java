@@ -9,7 +9,7 @@ import java.util.List;
 public interface BankService {
 
     // create bank
-    CreateBankResponse createBank(CreateBankRequest request);
+    CreateBankResponse saveBank(CreateBankRequest request);
 
     // get bank
     BankDTO getBankById(Long id);
