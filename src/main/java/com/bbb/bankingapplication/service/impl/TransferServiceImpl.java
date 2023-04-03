@@ -41,6 +41,8 @@ public class TransferServiceImpl implements TransferService {
 
         // simpan transaction di TransactionHistory untuk fromAccount dan toAccount
 
+        // balikannya adalah String
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     }
 
