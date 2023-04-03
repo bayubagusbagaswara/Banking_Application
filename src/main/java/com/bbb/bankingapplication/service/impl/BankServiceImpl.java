@@ -1,8 +1,6 @@
 package com.bbb.bankingapplication.service.impl;
 
-import com.bbb.bankingapplication.dto.bank.BankDTO;
-import com.bbb.bankingapplication.dto.bank.CreateBankRequest;
-import com.bbb.bankingapplication.dto.bank.CreateBankResponse;
+import com.bbb.bankingapplication.dto.bank.*;
 import com.bbb.bankingapplication.model.Bank;
 import com.bbb.bankingapplication.repository.BankRepository;
 import com.bbb.bankingapplication.service.BankService;
@@ -74,6 +72,16 @@ public class BankServiceImpl implements BankService {
     public List<BankDTO> getAllBankList() {
         List<Bank> bankList = bankRepository.findAll();
         return mapToBankDTOList(bankList);
+    }
+
+    @Override
+    public UpdateBankResponse updateBank(Long bankId, UpdateBankRequest request) {
+        return null;
+    }
+
+    @Override
+    public void deleteBank(Long bankId) {
+
     }
 
     private static CreateBankResponse mapToBankResponse(Bank bank) {
