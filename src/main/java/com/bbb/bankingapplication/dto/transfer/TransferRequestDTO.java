@@ -20,7 +20,6 @@ public class TransferRequestDTO {
 //    private String userPhoneNumber;
 
     private String transactionCategory; // TRANSFER_ONLINE, TRANSFER_SKN, TRANSFER_RTGS
-    private String transactionStatus; // SUCCESS, FAILED, SUSPECT, INPROGRESS
     private String transactionDescription; // deskripsi transfer
     private Date transactioDate;
     private String transactionCurrency;
