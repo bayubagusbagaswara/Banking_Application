@@ -22,7 +22,7 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    public CreateBankResponse createBank(CreateBankRequest request) {
+    public CreateBankResponse saveBank(CreateBankRequest request) {
         Bank bank = Bank.builder()
                 .bankCode(request.getBankCode())
                 .areaCode(request.getAreaCode())
