@@ -22,6 +22,7 @@ import javax.persistence.UniqueConstraint;
  * Ini untuk biodata user yang inti
  * atau yang digunakan oleh Bank untuk mengenali nasabahnya
  * CIF adalah Customer Information File, informasi yang berisi data lengkap mengenai Nasabah.
+ * UserProfile digunakan utamanya untuk penggunaan Mobile Banking, karena tiap login harus membawa userProfileId, phoneNumber
  */
 @EqualsAndHashCode(callSuper = true)
 @Entity
