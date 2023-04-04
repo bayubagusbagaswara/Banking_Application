@@ -2,6 +2,7 @@ package com.bbb.bankingapplication.service.impl;
 
 import com.bbb.bankingapplication.dto.CreateUserAccountRequest;
 import com.bbb.bankingapplication.dto.CreateUserAccountResponse;
+import com.bbb.bankingapplication.dto.UserAccountDTO;
 import com.bbb.bankingapplication.model.enumerator.AccountStatus;
 import com.bbb.bankingapplication.model.user.UserAccount;
 import com.bbb.bankingapplication.model.user.UserProfile;
@@ -57,6 +58,26 @@ public class UserAccountServiceImpl implements UserAccountService {
                 .currencyCode(userAccount.getCurrencyCode())
                 .createdAt(userAccount.getCreatedAt())
                 .updatedAt(userAccount.getUpdatedAt())
+                .build();
+    }
+
+    @Override
+    public UserAccountDTO getUserAccountById(Long userAccountId) {
+        UserAccount userAccount = userAccountRepository.findById(userAccountId)
+                .orElseThrow(() -> new RuntimeException("User Account not found"));
+        return mapToUserAccountDTO(userAccount);
+    }
+
+    private static UserAccountDTO mapToUserAccountDTO(UserAccount userAccount) {
+        return UserAccountDTO.builder()
+                .id(String.valueOf(userAccount.getId()))
+                .userProfileId(String.valueOf(userAccount.getUserProfile().getId()))
+                .accountNumber(userAccount.getAccountNumber())
+                .accountStatus(userAccount.getAccountStatus().name())
+                .productCode(userAccount.getProductCode())
+                .productName(userAccount.getProductName())
+                .productType(userAccount.getProductType())
+                .currencyCode(userAccount.getCurrencyCode())
                 .build();
     }
 
