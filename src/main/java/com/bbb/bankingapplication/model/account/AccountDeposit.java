@@ -1,4 +1,4 @@
-package com.bbb.bankingapplication.model.user;
+package com.bbb.bankingapplication.model.account;
 
 import com.bbb.bankingapplication.model.base.UserAudit;
 import lombok.*;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountDepositUser extends UserAudit {
+public class AccountDeposit extends UserAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
