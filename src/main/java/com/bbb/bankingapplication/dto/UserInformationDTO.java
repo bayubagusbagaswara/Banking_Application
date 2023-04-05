@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Builder
@@ -21,13 +22,34 @@ public class UserInformationDTO implements Serializable {
 
     private String fullName;
 
+    private String shortName;
+
     private String gender;
+
+    private String maritalStatus;
+
+    private String placeOfBirth;
+
+    private Date dateOfBirth;
 
     private String citizenship;
 
-    private String birthDate;
+    private String residentType;
 
-    private String birthPlace;
+    private String address;
 
+    private String subDistrict;
+
+    private String city;
+
+    private String province;
+    private Long branchId;
+
+    private String jobPosition;
+    private String phoneHome;
+    private String division;
+    private String postalCode;
+    private String religion;
+    private String nik;
 
 }
