@@ -20,6 +20,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 /**
  * ini adalah akun (jenis tabungan) milik nasabah
@@ -64,4 +65,58 @@ public class UserAccount extends UserAudit {
 
     @Column(name = "currency_code")
     private String currencyCode; // mata uang yang digunakan untuk produk rekening
+
+    @Column(name = "balance_total")
+    private BigDecimal balanceTotal; // 100000.00
+
+    @Column(name = "balance_total_formatted")
+    private String balanceTotalFormatted; // 100.000,00
+
+    // di sini ada field AdditionalData
+    // dimana di AdditionalData ada info tentang balance (saldo)
+    // berarti harus nambah sendiri
+    // karena mungkin masalah pengurangan dan penambahan nominal terjadi di ESB
+
+//    {
+//        "balanceTotal": 100000.00,
+//            "balanceTotalFormatted": "100.000,00",
+//            "balanceAvailable": 50000.00,
+//            "balanceAvailableFormatted": "50.000,00",
+//            "balanceHold": 50000.00,
+//            "balanceHoldFormatted": "50.000,00",
+//            "rate": "1",
+//            "accountNumber": "7420619175",
+//            "accountNumberMasked": "******9175",
+//            "currencyCode": "IDR",
+//            "accountStatus": "Active",
+//            "accountType": "SA",
+//            "accountAlias": "Easy Mudharabah",
+//            "isVisible": false,
+//            "isSof": true,
+//            "sofAllowed": true,
+//            "productName": "Easy Mudharabah",
+//            "accountCategory": "6010",
+//            "accountOwnerName": "TRI PRIYANI RETNOWATI"
+//    }
+//{
+//    "originalBalance": 10000000.00,
+//        "originalBalanceFormatted": "10.000.000,00",
+//        "rate": 1,
+//        "maturityDate": "20160721",
+//        "termCode": "06M",
+//        "minimumAmount": 0.00,
+//        "autoRenewal": true,
+//        "accountNumber": "7000000132286487",
+//        "accountNumberMasked": "************6487",
+//        "currencyCode": "IDR",
+//        "accountStatus": "Active",
+//        "accountType": "CD",
+//        "accountAlias": "Deposito",
+//        "isVisible": false,
+//        "isSof": false,
+//        "sofAllowed": false,
+//        "productName": "Deposito",
+//        "accountCategory": "6601",
+//        "accountOwnerName": "TRI PRIYANI RETNOWATI"
+//}
 }
