@@ -37,3 +37,10 @@ Memiliki Fitur
 
 # Convert Date to String
 response.setTransactionDate(DateUtil.convertDate(transaction.getTransactionDate().getTime(), "yyyy-MM-dd HH:mm:ss"));
+
+# Inquiry
+
+- tujuan inquiry adalah untuk mengecek dan mendapatkan data
+- misal kita melakukan pembayaran via gopay, maka kita akan meminta data kita ke gopay
+- misal juga pengecekan pelunasan haji, tujuannya untuk mengecek apakah sudah lunas atau belum
+- saat inquiry pasti kita membawa data request, data request tersebut akan dicek, misal data request nya adalah nama nasabah dan nomor rekening, jadi apakah pembayaran atas nama dan rekening tersebut sudah lunas atau belum
