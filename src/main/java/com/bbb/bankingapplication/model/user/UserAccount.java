@@ -57,9 +57,6 @@ public class UserAccount extends UserAudit {
     @Column(name = "product_name")
     private String productName; // nama produk, misal Easy Wadiah memiliki banyak tipe
 
-    @Column(name = "product_type")
-    private String productType; // jenis produk rekening
-
     @Column(name = "product_code")
     private String productCode; // code produk rekening
 
