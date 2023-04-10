@@ -2,6 +2,7 @@ package com.bbb.bankingapplication.service.impl;
 
 import com.bbb.bankingapplication.dto.AccountProductDTO;
 import com.bbb.bankingapplication.dto.CreateAccountProductRequest;
+import com.bbb.bankingapplication.dto.UpdateAccountProductRequest;
 import com.bbb.bankingapplication.model.product.AccountProduct;
 import com.bbb.bankingapplication.repository.AccountProductRepository;
 import com.bbb.bankingapplication.service.AccountProductService;
@@ -53,6 +54,26 @@ public class AccountProductServiceImpl implements AccountProductService {
     public AccountProductDTO getAccountProductByCode(String productCode) {
         AccountProduct accountProduct = accountProductRepository.findAccountProductByCode(productCode)
                 .orElseThrow(() -> new RuntimeException("Account Product not found with code : [" + productCode + "]"));
+        return mapToAccountProductDTO(accountProduct);
+    }
+
+    @Override
+    public AccountProductDTO updateAccountProduct(Long accountProductId, UpdateAccountProductRequest request) {
+        AccountProduct accountProduct = accountProductRepository.findById(accountProductId)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with id :[" + accountProductId + "]"));
+
+        // update
+        accountProduct.setProductCode(request.getProductCode());
+        accountProduct.setProductName(request.getProductName());
+        accountProduct.setProductInfo(request.getProductInfo());
+        accountProduct.setProductDescription(request.getProductDescription());
+        accountProduct.setProductShortDescription(request.getProductShortDescription());
+        accountProduct.setMinimumBalance(request.getMinimumBalance());
+        accountProduct.setMinimumInitialDeposit(request.getMinimumInitialDeposit());
+        accountProduct.setProductFeature(request.getProductFeature());
+
+        accountProduct.setUpdatedAt(LocalDateTime.now());
+
         return mapToAccountProductDTO(accountProduct);
     }
 
