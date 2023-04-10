@@ -13,13 +13,11 @@ public class CreateUserAccountRequest {
 
     private String accountNumber;
 
-    private String accountStatus;
+    private String accountStatus; // secara default saat request pasti accountStatus ini belum active
 
-    private String productName;
+    private String productCode; // didapat dari AccountProduct
 
-    private String productType;
+    private String productName; // didapat dari AccountProduct
 
-    private String productCode;
-
-    private String currencyCode;
+    private String currencyCode; // user memilih tabungannya dalam mata uang apa
 }
