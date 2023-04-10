@@ -43,10 +43,10 @@ public class AccountProduct extends UserAudit {
     private BigDecimal minimumBalance; // minimum saldo tertahan
 
     @Column(name = "minimum_initial_deposit")
-    private String minimumInitialDeposit; // minimum deposit untuk product ini (skip)
+    private BigDecimal minimumInitialDeposit; // minimum deposit awal untuk product ini (skip)
 
     @Column(name = "product_feature")
-    private String productFeature;
+    private String productFeature; // fitur unggulan product (berbentuk poin-poin)
 
 //    private String productNameCard;
 //    private String descriptionCard;
