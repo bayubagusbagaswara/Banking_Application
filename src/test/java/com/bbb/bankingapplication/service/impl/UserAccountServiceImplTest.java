@@ -27,7 +27,6 @@ class UserAccountServiceImplTest {
                 .accountStatus("active")
                 .productName("Easy Wadiah")
                 .productCode("008")
-                .productType("A")
                 .currencyCode("IDR")
                 .build();
 
