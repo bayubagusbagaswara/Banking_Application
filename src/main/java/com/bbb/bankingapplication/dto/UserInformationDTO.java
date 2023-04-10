@@ -21,27 +21,16 @@ public class UserInformationDTO implements Serializable {
     private String userId;
 
     private String fullName;
-
     private String shortName;
-
     private String gender;
-
     private String maritalStatus;
-
     private String placeOfBirth;
-
     private Date dateOfBirth;
-
     private String citizenship;
-
     private String residentType;
-
     private String address;
-
     private String subDistrict;
-
     private String city;
-
     private String province;
     private Long branchId;
 
