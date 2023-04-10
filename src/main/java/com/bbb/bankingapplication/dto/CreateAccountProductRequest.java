@@ -25,6 +25,8 @@ public class CreateAccountProductRequest {
 
     private BigDecimal minimumBalance;
 
+    private BigDecimal minimumInitialDeposit;
+
     private String productFeature;
 
 }
