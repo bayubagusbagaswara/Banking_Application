@@ -5,13 +5,30 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountProductDTO {
 
+    private String id;
+
+    private String productCode;
+
     private String productName;
 
     private String productInfo;
+
+    private String productDescription;
+
+    private String productShortDescription;
+
+    private BigDecimal minimumBalance;
+
+    private BigDecimal minimumInitialDeposit;
+
+    private String productFeature;
+
 }
