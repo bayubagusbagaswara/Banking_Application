@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -30,5 +31,11 @@ public class AccountProductDTO {
     private BigDecimal minimumInitialDeposit;
 
     private String productFeature;
+
+    private LocalDateTime createdAt;
+    private String createdBy;
+
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
 }
