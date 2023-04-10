@@ -7,6 +7,7 @@ import com.bbb.bankingapplication.repository.AccountProductRepository;
 import com.bbb.bankingapplication.service.AccountProductService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,8 +22,24 @@ public class AccountProductServiceImpl implements AccountProductService {
 
     @Override
     public AccountProductDTO saveAccountProduct(CreateAccountProductRequest request) {
-        AccountProduct accountProduct = AccountProduct.builder().build();
-        return null;
+        AccountProduct accountProduct = AccountProduct.builder()
+                .productCode(request.getProductCode())
+                .productName(request.getProductName())
+                .productInfo(request.getProductInfo())
+                .productDescription(request.getProductDescription())
+                .productShortDescription(request.getProductShortDescription())
+                .minimumBalance(request.getMinimumBalance())
+                .minimumInitialDeposit(request.getMinimumInitialDeposit())
+                .productFeature(request.getProductFeature())
+                .build();
+
+        LocalDateTime now = LocalDateTime.now();
+        accountProduct.setCreatedAt(now);
+        accountProduct.setUpdatedAt(now);
+
+        accountProductRepository.save(accountProduct);
+
+        return mapToAccountProductDTO(accountProduct);
     }
 
     @Override
