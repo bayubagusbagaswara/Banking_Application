@@ -4,10 +4,12 @@ import com.bbb.bankingapplication.dto.CreateUserAccountRequest;
 import com.bbb.bankingapplication.dto.CreateUserAccountResponse;
 import com.bbb.bankingapplication.dto.UserAccountDTO;
 
+/**
+ * dinisi User akan memilik AccountProduct mana yang ingin digunakan sebagai rekeningnya
+ * makanya dia akan get accountProduct untuk mendapatkan productName, productCode
+ */
 public interface UserAccountService {
 
-    // cari user profile dulu
-    // if("00".equals(..string..)) atau pengecekan untuk konstanta itu paling kiri, sedangkan variable di kanan
 
     // ini membuat rekening
     CreateUserAccountResponse createUserAccount(Long userProfileId, CreateUserAccountRequest request);
