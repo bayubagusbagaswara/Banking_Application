@@ -34,7 +34,6 @@ public class UserAccountServiceImpl implements UserAccountService {
                 .accountNumber(request.getAccountNumber())
                 .productCode(request.getProductCode())
                 .productName(request.getProductName())
-                .productType(request.getProductType())
                 .currencyCode(request.getCurrencyCode())
                 .build();
 
@@ -53,7 +52,6 @@ public class UserAccountServiceImpl implements UserAccountService {
                 .accountNumber(userAccount.getAccountNumber())
                 .accountStatus(userAccount.getAccountStatus().name())
                 .productName(userAccount.getProductName())
-                .productType(userAccount.getProductType())
                 .productCode(userAccount.getProductCode())
                 .currencyCode(userAccount.getCurrencyCode())
                 .createdAt(userAccount.getCreatedAt())
@@ -64,7 +62,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public UserAccountDTO getUserAccountById(Long userAccountId) {
         UserAccount userAccount = userAccountRepository.findById(userAccountId)
-                .orElseThrow(() -> new RuntimeException("User Account not found"));
+                .orElseThrow(() -> new RuntimeException("User Account not found with id : [" + userAccountId + "]"));
         return mapToUserAccountDTO(userAccount);
     }
 
@@ -76,7 +74,6 @@ public class UserAccountServiceImpl implements UserAccountService {
                 .accountStatus(userAccount.getAccountStatus().name())
                 .productCode(userAccount.getProductCode())
                 .productName(userAccount.getProductName())
-                .productType(userAccount.getProductType())
                 .currencyCode(userAccount.getCurrencyCode())
                 .build();
     }
