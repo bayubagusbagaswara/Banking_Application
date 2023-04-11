@@ -43,10 +43,14 @@ class AccountProductServiceImplTest {
         AccountProductDTO response = accountProductService.getAccountProductByCodeName(productCodeName);
 
         log.info("Balance: {}", response.getMinimumBalance()); // 20000.00
+        log.info("Created At: {}", response.getCreatedAt()); // 2023-04-11T04:44:59.584555Z
     }
 
     @Test
     void getAccountProductByCodeNumber() {
+
+        String productCodeNumber = "";
+
 
     }
 
