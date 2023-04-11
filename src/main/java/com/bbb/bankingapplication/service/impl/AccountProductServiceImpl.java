@@ -27,12 +27,10 @@ public class AccountProductServiceImpl implements AccountProductService {
                 .productCodeNumber(request.getProductCodeNumber())
                 .productCodeName(request.getProductCodeName())
                 .productTitle(request.getProductTitle())
-                .productInfo(request.getProductInfo())
                 .productDescription(request.getProductDescription())
                 .productShortDescription(request.getProductShortDescription())
                 .minimumBalance(request.getMinimumBalance())
                 .minimumInitialDeposit(request.getMinimumInitialDeposit())
-                .productFeature(request.getProductFeature())
                 .build();
 
         LocalDateTime now = LocalDateTime.now();
@@ -67,13 +65,12 @@ public class AccountProductServiceImpl implements AccountProductService {
         accountProduct.setProductCodeNumber(request.getProductCodeNumber());
         accountProduct.setProductCodeName(request.getProductCodeName());
         accountProduct.setProductTitle(request.getProductTitle());
-        accountProduct.setProductInfo(request.getProductInfo());
         accountProduct.setProductDescription(request.getProductDescription());
         accountProduct.setProductShortDescription(request.getProductShortDescription());
         accountProduct.setMinimumBalance(request.getMinimumBalance());
         accountProduct.setMinimumInitialDeposit(request.getMinimumInitialDeposit());
-        accountProduct.setProductFeature(request.getProductFeature());
 
+        // updated at
         accountProduct.setUpdatedAt(LocalDateTime.now());
 
         accountProductRepository.save(accountProduct);
@@ -99,12 +96,10 @@ public class AccountProductServiceImpl implements AccountProductService {
                 .productCodeNumber(accountProduct.getProductCodeNumber())
                 .productCodeName(accountProduct.getProductCodeName())
                 .productTitle(accountProduct.getProductTitle())
-                .productInfo(accountProduct.getProductInfo())
                 .productDescription(accountProduct.getProductDescription())
                 .productShortDescription(accountProduct.getProductShortDescription())
                 .minimumBalance(accountProduct.getMinimumBalance())
                 .minimumInitialDeposit(accountProduct.getMinimumInitialDeposit())
-                .productFeature(accountProduct.getProductFeature())
                 .createdAt(accountProduct.getCreatedAt())
                 .createdBy(accountProduct.getCreatedBy())
                 .updatedAt(accountProduct.getUpdatedAt())
