@@ -14,6 +14,8 @@ public class DepositServiceImpl implements DepositService {
 
     @Override
     public OpeningDepositResponse openingDeposit(OpeningDepositRequest request) {
+
+        // deposit intinya ada perhitungan bagi hasil antara total jumlah uang yg didepositkan
         log.info("Start opening deposit : {}", request);
         String modulNameNisbahBank = "NISBAH_BAGI_HASIL_BANK";
         String modulNameNisbahNasabah = "NISBAH_BAGI_HASIL_NASABAH";
