@@ -24,11 +24,11 @@ public class AccountProduct extends UserAudit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "product_code")
-    private String productCode; // 6001
+    @Column(name = "product_code_number")
+    private String productCodeNumber; // 6001
 
-    @Column(name = "product_name")
-    private String productName; // EASY_WADIAH
+    @Column(name = "product_code_name")
+    private String productCodeName; // EASY_WADIAH
 
     @Column(name = "product_title")
     private String productTitle; // Easy Wadiah
