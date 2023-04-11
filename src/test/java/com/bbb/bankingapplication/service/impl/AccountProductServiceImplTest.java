@@ -39,10 +39,15 @@ class AccountProductServiceImplTest {
 
     @Test
     void getAccountProductByCodeName() {
+        String productCodeName = "EASY_WADIAH";
+        AccountProductDTO response = accountProductService.getAccountProductByCodeName(productCodeName);
+
+        log.info("Balance: {}", response.getMinimumBalance()); // 20000.00
     }
 
     @Test
     void getAccountProductByCodeNumber() {
+
     }
 
     @Test
