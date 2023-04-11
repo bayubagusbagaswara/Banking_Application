@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "productCodeNumber": "6001",
+    "productCodeName": "EASY_WADIAH",
+    "productTitle": "Easy Wadiah",
+    "productDescription": "Jaga harta kamu tetap murni dengan prinsip tanpa riba",
+    "productShortDescription": "Bebas biaya administrasi bulanan. Fasilitas Kartu GPN & Visa. Gratis tarik tunai diseluruh ATM BSI & ATM Mandiri. Bebas biaya transaksi diseluruh EDC Bank Mandiri, Bank Indonesia, dan EDC Berlogo Prima.",
+    "minimumBalance": 20000.00,
+    "minimumInitialDeposit": 50000.00
+  },
+  {
+    "id": 2,
+    "productCodeNumber": "6002",
+    "productCodeName": "EASY_MUDHARABAH",
+    "productTitle": "Easy Mudharabah",
+    "productDescription": "Dapatkan keuntungan bagi hasil sesuai dengan prinsip syariah",
+    "productShortDescription": "Mendapatkan imbal hasil. Fasilitas Kartu GPN & Visa. Gratis tarik tunai diseluruh ATM BSI & ATM Mandiri. Bebas biaya transaksi diseluruh EDC Bank Mandiri, Bank Indonesia, dan EDC Berlogo Prima.",
+    "minimumBalance": 20000.00,
+    "minimumInitialDeposit": 50000.00
+  },
+  {
+    "id": 3,
+    "productCodeNumber": "6003",
+    "productCodeName": "GADAI_EMAS",
+    "productTitle": "Gadai Emas Fisik",
+    "productDescription": "Fitur menggadai (Rahn) emas dari perhiasan, logam mulia atau koin emas/koin dinar",
+    "productShortDescription": "Nilai taksiran tinggi. Proses mudah dan cepat. Emas tersimpan aman dan terjamin.",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 4,
+    "productCodeNumber": "6004",
+    "productCodeName": "TABUNGAN_QURBAN",
+    "productTitle": "Tabungan Qurban",
+    "productDescription": "Mari berqurban untuk saling berbagi kebahagiaan bersama BSI",
+    "productShortDescription": "Atur nabung terjadwal kamu. Bisa setor diluar jadwal autodebet. Dapat memilih akad tabungan sesuai keinginan kamu. Bisa beli hewan qurban melalui rekenan BSI ketika jatuh tempo.",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 5,
+    "productCodeNumber": "6005",
+    "productCodeName": "CICIL_EMAS",
+    "productTitle": "Cicil Emas",
+    "productDescription": "Pembelian emas kualitas terbaik dengan cara dicicil",
+    "productShortDescription": "Emas 100% diasuransikan. Jangka waktu 1-5 tahun. Dapat diuangkan dengan cara digadaikan untuk kebutuhan mendesak",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 6,
+    "productCodeNumber": "6006",
+    "productCodeName": "SBSN",
+    "productTitle": "SBSN",
+    "productDescription": "Simpanan investasi yang dijamin aman oleh Pemerintah. Yuk ikut berkontribusi kepada negara!",
+    "productShortDescription": "Aman dijamin pemerintah 100%. Menguntungkan dengan imbalan setiap bulan. Terjangkau dengan modal investasi minimum.",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 7,
+    "productCodeNumber": "6007",
+    "productCodeName": "GRIYA_HASANAH",
+    "productTitle": "Griya Hasanah",
+    "productDescription": "Wujudkan memiliki rumah impian dengan langkah mudah untuk kebaikan kamu",
+    "productShortDescription": "Proses cepat dan mudah. Plafon mulai dari Rp 50 Juta s.d. Rp 1.5M. Jangka waktu s.d. 20 tahun.",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 8,
+    "productCodeNumber": "6008",
+    "productCodeName": "TABUNGAN_HAJI_INDONESIA",
+    "productTitle": "Tabungan Haji Indonesia",
+    "productDescription": "Simpanan berjangka khusus untuk membantu menunaikan ibadah Haji dengan Akad Mudharabah Muthlaqah",
+    "productShortDescription": "Atur perencanaan ibadah haji kamu. Tanpa biaya bulanan. Pendaftaran & Pelunasan dapat dilakukan di BSI Mobile.",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 9,
+    "productCodeNumber": "6009",
+    "productCodeName": "AUTOSAVE",
+    "productTitle": "Autosave",
+    "productDescription": "",
+    "productShortDescription": "",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+  },
+  {
+    "id": 10,
+    "productCodeNumber": "6010",
+    "productCodeName": "INVEST",
+    "productTitle": "Investasi",
+    "productDescription": "",
+    "productShortDescription": "",
+    "minimumBalance": 0,
+    "minimumInitialDeposit": 0
+
+  }
+]
+
+
+"ACCOUNT_TYPE" : "SA",
+"PRODUCT_CODE" : "6012",
+"PRODUCT_NAME" : "Tabungan Haji Indonesia",
+"PRODUCT_DESCRIPTION_IDN" : "Simpanan berjangka khusus untuk membantu menunaikan ibadah Haji dengan <b>Akad Mudharabah Muthlaqah<b>.",
+"PRODUCT_SHORT_DESCRIPTION_IDN" : "Atur perencanaan ibadah haji kamu<br>Tanpa biaya bulanan<br>Pendaftaran & Pelunasan dapat dilakukan di BSI Mobile",
+"PRODUCT_DESCRIPTION_CARD" : "Wujudkan impian ke tanah suci bersama BSI"
+
+
+"ACCOUNT_TYPE" : "SA",
+"PRODUCT_CODE" : "AUTOSAVE",
+"PRODUCT_NAME" : "Tabungan Autosave",
+"PRODUCT_DESCRIPTION_IDN" : "Nabung terjadwal dengan aman bersama BSI",
+"PRODUCT_SHORT_DESCRIPTION_IDN" : "Atur nabung terjadwal kamu<br>Bebas tentukan tujuan tabungan sesuai keinginan kamu<br>Bisa setor diluar jadwal autodebet<br>Kamu dapat memilih akad tabungan sesuai keinginan",
+"PRODUCT_DESCRIPTION_CARD" : "Nabung terjadwal dengan aman bersama BSI"
+
+"ACCOUNT_TYPE" : "PAYLATER",
+"PRODUCT_CODE" : "PAYLATER",
+"PRODUCT_NAME" : "BSI Paylater",
+"PRODUCT_DESCRIPTION_IDN" : "Solusi mendapatkan dana lebih cepat untuk memenuhi kebutuhan sehari-hari kamu.",
+"PRODUCT_SHORT_DESCRIPTION_IDN" : "Persyaratan mudah dan praktis<br>Sesuai prinsip Syariah menggunakan akad Kafalah bil Ujrah dan Qardh<br>Pilihan jangka waktu angsuran beragam<br>Fee atau Ujrah kompetitif",
+"PRODUCT_DESCRIPTION_CARD" : "Kemudahan transaksi untuk kebuthan sehari-hari"
+
+"ACCOUNT_TYPE" : "INVEST",
+"PRODUCT_CODE" : "INVEST",
+"PRODUCT_NAME" : "INVESTASI",
+"PRODUCT_DESCRIPTION_IDN" : "Pilihan produk dana untuk kamu yang sesuai dengan prinsip Syariah",
+"PRODUCT_SHORT_DESCRIPTION_IDN" : "Proses cepat dan mudah<br\/>Plafon mulai dari Rp 50 Juta s.d. Rp 1.5M<br\/>Jangka waktu s.d. 20 tahun",
+"PRODUCT_DESCRIPTION_CARD" : null
