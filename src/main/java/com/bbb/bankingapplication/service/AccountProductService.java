@@ -21,5 +21,5 @@ public interface AccountProductService {
 
     AccountProductDTO updateAccountProduct(Long accountProductId, UpdateAccountProductRequest request);
 
-    void deleteAccountProduct();
+    void deleteAccountProduct(Long productCodeNumber);
 }
