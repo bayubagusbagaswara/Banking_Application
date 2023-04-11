@@ -19,8 +19,6 @@ public class CreateAccountProductRequest {
 
     private String productTitle;
 
-    private String productInfo;
-
     private String productDescription;
 
     private String productShortDescription;
@@ -28,7 +26,5 @@ public class CreateAccountProductRequest {
     private BigDecimal minimumBalance;
 
     private BigDecimal minimumInitialDeposit;
-
-    private String productFeature;
 
 }
