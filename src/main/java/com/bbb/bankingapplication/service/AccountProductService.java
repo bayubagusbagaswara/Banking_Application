@@ -15,9 +15,9 @@ public interface AccountProductService {
 
     AccountProductDTO saveAccountProduct(CreateAccountProductRequest request);
 
-    AccountProductDTO getAccountProductByName(String productName);
+    AccountProductDTO getAccountProductByCodeName(String productCodeName);
 
-    AccountProductDTO getAccountProductByCode(String productCode);
+    AccountProductDTO getAccountProductByCodeNumber(String productCodeNumber);
 
     AccountProductDTO updateAccountProduct(Long accountProductId, UpdateAccountProductRequest request);
 
