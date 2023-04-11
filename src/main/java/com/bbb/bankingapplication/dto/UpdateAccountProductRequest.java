@@ -13,9 +13,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class UpdateAccountProductRequest {
 
-    private String productCode;
+    private String productCodeNumber;
 
-    private String productName;
+    private String productCodeName;
+
+    private String productTitle;
 
     private String productInfo;
 
