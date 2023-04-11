@@ -22,23 +22,46 @@ public class UserInformationServiceImpl implements UserInformationService {
     }
 
     @Override
-    public CreateUserInformationResponse saveUserInformation(CreateUserInformationRequest request) {
+    public UserInformationDTO saveUserInformation(CreateUserInformationRequest request) {
         // cari UserProfile by id dulu
         UserProfile userProfile = userProfileRepository.findById(Long.valueOf(request.getUserProfileId()))
                 .orElseThrow(() -> new RuntimeException("User profile not found with id :[" + request.getUserProfileId() + "]"));
 
+        // create user information
         UserInformation userInformation = UserInformation.builder()
+                .userProfile(userProfile)
+                .fullName(request.getFullName())
+                .shortName(request.getShortName())
+                .gender(request.getGender())
+                .maritalStatus(request.getMaritalStatus())
+                .placeOfBirth(request.getPlaceOfBirth())
+                .dateOfBirth(request.getDateOfBirth())
+                .citizenship(request.getCitizenship())
+                .residentType(request.getResidentType())
+                .address(request.getAddress())
+                .subDistrict(request.getSubDistrict())
+                .city(request.getCity())
+                .province(request.getProvince())
+                .branchId(request.getBranchId())
+                .jobPosition(request.getJobPosition())
+                .phoneHome(request.getPhoneHome())
+                .division(request.getDivision())
+                .postalCode(request.getPostalCode())
+                .religion(request.getReligion())
+                .nik(request.getNik())
                 .build();
 
         userInformationRepository.save(userInformation);
-        return null;
+
+        return mapToUserInformationDTO(userInformation);
     }
 
     @Override
     public UserInformationDTO getUserInformationById(Long userInformationId) {
-        return null;
+        UserInformation userInformation = userInformationRepository.findById(userInformationId)
+                .orElseThrow(() -> new RuntimeException("User Information not found with id : [" + userInformationId + "]"));
+        return mapToUserInformationDTO(userInformation);
     }
-
 
     private static CreateUserInformationResponse mapToCreateUserInformationResponse(UserInformation userInformation) {
         return null;
