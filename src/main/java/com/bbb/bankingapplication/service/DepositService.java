@@ -7,10 +7,11 @@ import com.bbb.bankingapplication.dto.deposit.UpdateDepositResponse;
 
 public interface DepositService {
 
-    // openingDeposit
+    // nasabah membuka deposit
     OpeningDepositResponse openingDeposit(OpeningDepositRequest request);
 
-    // changeDeposit atau updateDeposit
+    // update deposit dilakukan oleh
+    // update deposit request cuma membawa data mpin, idDeposito, systemDeposito
     UpdateDepositResponse updateDeposit(UpdateDepositRequest request);
 
     // disbursementOfFounds (Pencairan Data)
