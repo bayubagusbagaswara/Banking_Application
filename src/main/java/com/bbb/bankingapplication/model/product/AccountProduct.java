@@ -25,10 +25,13 @@ public class AccountProduct extends UserAudit {
     private Long id;
 
     @Column(name = "product_code")
-    private String productCode;
+    private String productCode; // 6001
 
     @Column(name = "product_name")
-    private String productName;
+    private String productName; // EASY_WADIAH
+
+    @Column(name = "product_title")
+    private String productTitle; // Easy Wadiah
 
     @Column(name = "product_info")
     private String productInfo;
