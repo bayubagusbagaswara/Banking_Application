@@ -19,7 +19,7 @@ public interface AccountProductService {
 
     AccountProductDTO getAccountProductByCodeNumber(String productCodeNumber);
 
-    AccountProductDTO updateAccountProduct(Long accountProductId, UpdateAccountProductRequest request);
+    AccountProductDTO updateAccountProduct(String productCodeNumber, UpdateAccountProductRequest request);
 
-    void deleteAccountProduct(Long productCodeNumber);
+    void deleteAccountProduct(String productCodeNumber);
 }
