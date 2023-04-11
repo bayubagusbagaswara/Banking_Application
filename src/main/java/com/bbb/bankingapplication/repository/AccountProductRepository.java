@@ -13,6 +13,6 @@ public interface AccountProductRepository extends JpaRepository<AccountProduct, 
 //    @Query(value = "SELECT * FROM AccountProduct ap WHERE ap.productCodeName = :codeName", nativeQuery = true)
     Optional<AccountProduct> findAccountProductByProductCodeName(String codeName);
 
-    @Query(value = "SELECT * FROM AccountProduct ap WHERE ap.productCodeNumber = :codeNumber", nativeQuery = true)
-    Optional<AccountProduct> findProductByCodeNumber(String codeNumber);
+//    @Query(value = "SELECT * FROM AccountProduct ap WHERE ap.productCodeNumber = :codeNumber", nativeQuery = true)
+    Optional<AccountProduct> findAccountProductByProductCodeNumber(String codeNumber);
 }
