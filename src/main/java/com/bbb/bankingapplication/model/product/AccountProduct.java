@@ -33,9 +33,6 @@ public class AccountProduct extends UserAudit {
     @Column(name = "product_title")
     private String productTitle; // Easy Wadiah
 
-    @Column(name = "product_info")
-    private String productInfo;
-
     @Column(name = "product_description")
     private String productDescription;
 
@@ -48,8 +45,8 @@ public class AccountProduct extends UserAudit {
     @Column(name = "minimum_initial_deposit")
     private BigDecimal minimumInitialDeposit; // minimum deposit awal untuk product ini (skip)
 
-    @Column(name = "product_feature")
-    private String productFeature; // fitur unggulan product (berbentuk poin-poin)
+//    @Column(name = "product_feature")
+//    private String productFeature; // fitur unggulan product (berbentuk poin-poin)
 
 //    private String productNameCard;
 //    private String descriptionCard;
