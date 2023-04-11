@@ -84,8 +84,8 @@
     "productCodeNumber": "6009",
     "productCodeName": "AUTOSAVE",
     "productTitle": "Autosave",
-    "productDescription": "",
-    "productShortDescription": "",
+    "productDescription": "Nabung terjadwal dengan aman bersama BSI",
+    "productShortDescription": "Atur nabung terjadwal kamu. Bebas tentukan tujuan tabungan sesuai keinginan kamu. Bisa setor diluar jadwal autodebet. Kamu dapat memilih akad tabungan sesuai keinginan",
     "minimumBalance": 0,
     "minimumInitialDeposit": 0
   },
@@ -94,8 +94,8 @@
     "productCodeNumber": "6010",
     "productCodeName": "INVEST",
     "productTitle": "Investasi",
-    "productDescription": "",
-    "productShortDescription": "",
+    "productDescription": "Pilihan produk dana untuk kamu yang sesuai dengan prinsip Syariah",
+    "productShortDescription": "Proses cepat dan mudah. Plafon mulai dari Rp 50 Juta s.d. Rp 1.5M. Jangka waktu s.d. 20 tahun",
     "minimumBalance": 0,
     "minimumInitialDeposit": 0
 
