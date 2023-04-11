@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Data
 @Builder
@@ -34,10 +34,10 @@ public class AccountProductDTO {
 
     private String productFeature;
 
-    private LocalDateTime createdAt;
+    private Instant createdAt;
     private String createdBy;
 
-    private LocalDateTime updatedAt;
+    private Instant updatedAt;
     private String updatedBy;
 
 }
