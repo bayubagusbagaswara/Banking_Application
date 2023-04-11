@@ -8,7 +8,7 @@ import com.bbb.bankingapplication.repository.AccountProductRepository;
 import com.bbb.bankingapplication.service.AccountProductService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,7 +33,7 @@ public class AccountProductServiceImpl implements AccountProductService {
                 .minimumInitialDeposit(request.getMinimumInitialDeposit())
                 .build();
 
-        LocalDateTime now = LocalDateTime.now();
+        Instant now = Instant.now();
         accountProduct.setCreatedAt(now);
         accountProduct.setUpdatedAt(now);
 
@@ -44,21 +44,21 @@ public class AccountProductServiceImpl implements AccountProductService {
 
     @Override
     public AccountProductDTO getAccountProductByCodeName(String productCodeName) {
-        AccountProduct accountProduct = accountProductRepository.findProductByCodeName(productCodeName)
-                .orElseThrow(() -> new RuntimeException("Account Product not found with name : [" + productCodeName + "]"));
+        AccountProduct accountProduct = accountProductRepository.findAccountProductByProductCodeName(productCodeName)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with code name : [" + productCodeName + "]"));
         return mapToAccountProductDTO(accountProduct);
     }
 
     @Override
     public AccountProductDTO getAccountProductByCodeNumber(String productCodeNumber) {
-        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+        AccountProduct accountProduct = accountProductRepository.findAccountProductByProductCodeNumber(productCodeNumber)
                 .orElseThrow(() -> new RuntimeException("Account Product not found with code : [" + productCodeNumber + "]"));
         return mapToAccountProductDTO(accountProduct);
     }
 
     @Override
     public AccountProductDTO updateAccountProduct(String productCodeNumber, UpdateAccountProductRequest request) {
-        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+        AccountProduct accountProduct = accountProductRepository.findAccountProductByProductCodeNumber(productCodeNumber)
                 .orElseThrow(() -> new RuntimeException("Account Product not found with code number : [" + productCodeNumber + "]"));
 
         // update
@@ -71,7 +71,7 @@ public class AccountProductServiceImpl implements AccountProductService {
         accountProduct.setMinimumInitialDeposit(request.getMinimumInitialDeposit());
 
         // updated at
-        accountProduct.setUpdatedAt(LocalDateTime.now());
+        accountProduct.setUpdatedAt(Instant.now());
 
         accountProductRepository.save(accountProduct);
 
@@ -82,10 +82,11 @@ public class AccountProductServiceImpl implements AccountProductService {
     public void deleteAccountProduct(String productCodeNumber) {
         // soft delete manual, set deleted to false
         // search product by code number
-        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+        AccountProduct accountProduct = accountProductRepository.findAccountProductByProductCodeNumber(productCodeNumber)
                 .orElseThrow(() -> new RuntimeException("Account Product not found with code number : [" + productCodeNumber + "]"));
 
         accountProduct.setDeleted(true);
+        accountProduct.setDeletedAt(Instant.now());
 
         accountProductRepository.save(accountProduct);
     }
