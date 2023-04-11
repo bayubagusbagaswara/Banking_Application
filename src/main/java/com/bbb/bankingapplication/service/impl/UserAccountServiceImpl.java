@@ -11,7 +11,7 @@ import com.bbb.bankingapplication.repository.UserProfileRepository;
 import com.bbb.bankingapplication.service.UserAccountService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Service
 public class UserAccountServiceImpl implements UserAccountService {
@@ -40,7 +40,7 @@ public class UserAccountServiceImpl implements UserAccountService {
         AccountStatus accountStatus = AccountStatus.valueOf(request.getAccountStatus().toUpperCase());
         userAccount.setAccountStatus(accountStatus);
 
-        LocalDateTime now = LocalDateTime.now();
+        Instant now = Instant.now();
         userAccount.setCreatedAt(now);
         userAccount.setUpdatedAt(now);
 
@@ -75,6 +75,10 @@ public class UserAccountServiceImpl implements UserAccountService {
                 .productCode(userAccount.getProductCode())
                 .productName(userAccount.getProductName())
                 .currencyCode(userAccount.getCurrencyCode())
+                .createdAt(userAccount.getCreatedAt())
+                .updatedAt(userAccount.getUpdatedAt())
+                .createdBy(userAccount.getCreatedBy())
+                .updatedBy(userAccount.getUpdatedBy())
                 .build();
     }
 
