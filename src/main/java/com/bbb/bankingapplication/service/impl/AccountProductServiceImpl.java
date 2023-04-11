@@ -45,23 +45,23 @@ public class AccountProductServiceImpl implements AccountProductService {
     }
 
     @Override
-    public AccountProductDTO getAccountProductByName(String productName) {
-        AccountProduct accountProduct = accountProductRepository.findAccountProductByName(productName)
-                .orElseThrow(() -> new RuntimeException("Account Product not found with name : [" + productName + "]"));
+    public AccountProductDTO getAccountProductByCodeName(String productCodeName) {
+        AccountProduct accountProduct = accountProductRepository.findProductByCodeName(productCodeName)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with name : [" + productCodeName + "]"));
         return mapToAccountProductDTO(accountProduct);
     }
 
     @Override
-    public AccountProductDTO getAccountProductByCode(String productCode) {
-        AccountProduct accountProduct = accountProductRepository.findAccountProductByCode(productCode)
-                .orElseThrow(() -> new RuntimeException("Account Product not found with code : [" + productCode + "]"));
+    public AccountProductDTO getAccountProductByCodeNumber(String productCodeNumber) {
+        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with code : [" + productCodeNumber + "]"));
         return mapToAccountProductDTO(accountProduct);
     }
 
     @Override
-    public AccountProductDTO updateAccountProduct(Long accountProductId, UpdateAccountProductRequest request) {
-        AccountProduct accountProduct = accountProductRepository.findById(accountProductId)
-                .orElseThrow(() -> new RuntimeException("Account Product not found with id :[" + accountProductId + "]"));
+    public AccountProductDTO updateAccountProduct(String productCodeNumber, UpdateAccountProductRequest request) {
+        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with code number : [" + productCodeNumber + "]"));
 
         // update
         accountProduct.setProductCodeNumber(request.getProductCodeNumber());
@@ -79,6 +79,13 @@ public class AccountProductServiceImpl implements AccountProductService {
         accountProductRepository.save(accountProduct);
 
         return mapToAccountProductDTO(accountProduct);
+    }
+
+    @Override
+    public void deleteAccountProduct(String productCodeNumber) {
+
+        // soft delete manual, set deleted to false
+
     }
 
     private static AccountProductDTO mapToAccountProductDTO(AccountProduct accountProduct) {
