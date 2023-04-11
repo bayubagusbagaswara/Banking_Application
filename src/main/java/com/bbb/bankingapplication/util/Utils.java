@@ -260,16 +260,16 @@ public class Utils {
         }
     }
 
-    public static String constractDateDeposit(String date, String language){
-        /**format yang muncul esb yyyyMMdd**/
+    public static String constructDateDeposit(String date, String language){
+        // format yang muncul esb yyyyMMdd
 
         // ambil karakter dari 0 sampai 3 (yyyy)
         int year = Integer.parseInt(date.substring(0, 4));
 
-        // ambil karakter dari 4 sampai 6
+        // ambil karakter dari 4 sampai 6 (MM)
         int month = Integer.parseInt(date.substring(4, 6));
 
-        // ambil karakter dari 6 sampai maksimal panjang data
+        // ambil karakter dari 6 sampai maksimal panjang data (dd)
 //        int dated = Integer.parseInt(date.substring(6, date.length()));
         int dated = Integer.parseInt(date.substring(6));
 
