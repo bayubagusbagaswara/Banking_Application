@@ -98,7 +98,16 @@
     "productShortDescription": "Proses cepat dan mudah. Plafon mulai dari Rp 50 Juta s.d. Rp 1.5M. Jangka waktu s.d. 20 tahun",
     "minimumBalance": 0,
     "minimumInitialDeposit": 0
-
+  },
+  {
+    "id": 0,
+    "productCodeNumber": "",
+    "productCodeName": "",
+    "productTitle": "",
+    "productDescription": "",
+    "productShortDescription": "",
+    "minimumBalance": "",
+    "minimumInitialDeposit": ""
   }
 ]
 
