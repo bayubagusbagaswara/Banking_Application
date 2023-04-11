@@ -48,3 +48,5 @@ response.setTransactionDate(DateUtil.convertDate(transaction.getTransactionDate(
 
     // cari user profile dulu
     // if("00".equals(..string..)) atau pengecekan untuk konstanta itu paling kiri, sedangkan variable di kanan
+
+autosave adalaha produk tabungan dengan sistem terjadwal, langsung dipotong
