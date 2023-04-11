@@ -16,9 +16,11 @@ public class AccountProductDTO {
 
     private String id;
 
-    private String productCode;
+    private String productCodeNumber;
 
-    private String productName;
+    private String productCodeName;
+
+    private String productTitle;
 
     private String productInfo;
 
