@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -26,4 +28,10 @@ public class UserAccountDTO {
     private String productCode;
 
     private String currencyCode;
+
+    private Instant createdAt;
+    private Instant updatedAt;
+
+    private String createdBy;
+    private String updatedBy;
 }
