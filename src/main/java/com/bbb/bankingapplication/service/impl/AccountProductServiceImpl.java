@@ -24,8 +24,9 @@ public class AccountProductServiceImpl implements AccountProductService {
     @Override
     public AccountProductDTO saveAccountProduct(CreateAccountProductRequest request) {
         AccountProduct accountProduct = AccountProduct.builder()
-                .productCode(request.getProductCode())
-                .productName(request.getProductName())
+                .productCodeNumber(request.getProductCodeNumber())
+                .productCodeName(request.getProductCodeName())
+                .productTitle(request.getProductTitle())
                 .productInfo(request.getProductInfo())
                 .productDescription(request.getProductDescription())
                 .productShortDescription(request.getProductShortDescription())
@@ -63,8 +64,9 @@ public class AccountProductServiceImpl implements AccountProductService {
                 .orElseThrow(() -> new RuntimeException("Account Product not found with id :[" + accountProductId + "]"));
 
         // update
-        accountProduct.setProductCode(request.getProductCode());
-        accountProduct.setProductName(request.getProductName());
+        accountProduct.setProductCodeNumber(request.getProductCodeNumber());
+        accountProduct.setProductCodeName(request.getProductCodeName());
+        accountProduct.setProductTitle(request.getProductTitle());
         accountProduct.setProductInfo(request.getProductInfo());
         accountProduct.setProductDescription(request.getProductDescription());
         accountProduct.setProductShortDescription(request.getProductShortDescription());
@@ -74,14 +76,17 @@ public class AccountProductServiceImpl implements AccountProductService {
 
         accountProduct.setUpdatedAt(LocalDateTime.now());
 
+        accountProductRepository.save(accountProduct);
+
         return mapToAccountProductDTO(accountProduct);
     }
 
     private static AccountProductDTO mapToAccountProductDTO(AccountProduct accountProduct) {
         return AccountProductDTO.builder()
                 .id(String.valueOf(accountProduct.getId()))
-                .productCode(accountProduct.getProductCode())
-                .productName(accountProduct.getProductName())
+                .productCodeNumber(accountProduct.getProductCodeNumber())
+                .productCodeName(accountProduct.getProductCodeName())
+                .productTitle(accountProduct.getProductTitle())
                 .productInfo(accountProduct.getProductInfo())
                 .productDescription(accountProduct.getProductDescription())
                 .productShortDescription(accountProduct.getProductShortDescription())
