@@ -14,6 +14,7 @@ import java.util.Locale;
 @Slf4j
 public class DateUtil {
 
+    // membuat data tanggal (tipe data Date)
     public static Date constructDate(String dateString, String dateFormat, Locale locale) {
         try {
             return new SimpleDateFormat(dateFormat, locale).parse(dateString);
@@ -23,6 +24,7 @@ public class DateUtil {
         return null;
     }
 
+    // membuat Tanggal (Date) dengan tipe data String
     public static String constructDateString(Date date, String dateFormat, Locale locale) {
         return new SimpleDateFormat(dateFormat, locale).format(date);
     }
