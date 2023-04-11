@@ -26,6 +26,7 @@ public class ConstructorUtil {
 
     final static DecimalFormat df = new DecimalFormat("#,###", new DecimalFormatSymbols(Locale.ITALIAN));
 
+    // cek gender and convert
     public static String salutation(String gender, String language) {
         String salutation;
         if ("".equalsIgnoreCase(gender) || gender == null) {
@@ -217,6 +218,8 @@ public class ConstructorUtil {
 
     public static String constructDateWithOutTime(long dateTime, String language, boolean isFullName) {
         String dateConstruct;
+
+        // convert long to Date
         Date date = new Date(dateTime);
 
         Calendar cal = Calendar.getInstance();
@@ -243,6 +246,7 @@ public class ConstructorUtil {
         int year = cal.get(Calendar.YEAR);
 
         String stringMonth = language.equals(Language.INDONESIA.getLanguageName()) ? monthInIndo(month) : monthInEng(month);
+
         if (isFullName) {
             stringMonth = language.equals(Language.INDONESIA.getLanguageName()) ? monthFullNameInIndo(month) : monthFullNameInEng(month);
         }
@@ -252,30 +256,32 @@ public class ConstructorUtil {
     }
 
     public static String maskString(String text, int start, int end, char maskChar) {
-        if (StringUtils.isEmpty(text) || text.equalsIgnoreCase("")) {
+
+        // jika variable text bernilai kosong
+        if (text.isEmpty()) {
             return "";
         }
+
         if (start < 0) {
             start = 0;
         }
+
         if (start > end){
             return text;
         }
 
         int maskLength = end - start;
-        if(maskLength == 0){
+
+        if (maskLength == 0){
             return text;
         }
+
         StringBuilder sbMaskString = new StringBuilder(maskLength);
-        for (int i = 0 ; i <maskLength ; i ++ ){
+        for (int i = 0 ; i <maskLength ; i++) {
             sbMaskString.append(maskChar);
         }
-        return (text.substring(0,start) + sbMaskString + text.substring(start + maskLength)).replaceAll("(.{" + 4 + "})", "$1 ").trim();
+        return (text.substring(0, start) + sbMaskString + text.substring(start + maskLength)).replaceAll("(.{" + 4 + "})", "$1 ").trim();
     }
-
-//    public static void main(String[] args) {
-//        System.out.println(constructDateOnlyTime(1648132644776L, "IND", false));
-//    }
 
     public static String constructDateOnlyTime(long dateTime) {
         Date date = new Date(dateTime);
@@ -288,8 +294,7 @@ public class ConstructorUtil {
     }
 
     public static String mask(String input) {
-        String result = null;
-
+        String result;
         if (input != null) {
             if (!input.isEmpty()) {
                 result = input.replaceAll(".(?=.{4})", "*");
@@ -305,9 +310,8 @@ public class ConstructorUtil {
         return result;
     }
 
-
     public static String constructTransactionStatus(String transactionStatus) {
-        String result = null;
+        String result;
 
         switch (transactionStatus) {
             case "SUCCESS" :
@@ -340,10 +344,6 @@ public class ConstructorUtil {
             case "ZISWAF_WAKAF" :
                 result =  "Wakaf";
                 break;
-/*            case "ZISWAF_FIDYAH" :
-                result =  "Fidyah";
-                break;
- */
             case "ZISWAF_PAKET_PUASA" :
                 result =  "Paket Berbuka & Sahur";
                 break;
@@ -351,30 +351,27 @@ public class ConstructorUtil {
                 var myStr= transactionCategory.replaceFirst("ZISWAF_","");
                 myStr= myStr.replace("_"," ");
 
-                while (myStr.charAt(0)==' '){
+                while (myStr.charAt(0)==' ') {
                     myStr=myStr.substring(1);
                 }
 
-                int myStrlength = myStr.length();
+                // panjang string
+                int myStrLength = myStr.length();
 
-                for (int i = 0; i < myStrlength ; i++ ) {
-
-                    if (i==0){
+                for (int i = 0; i < myStrLength ; i++) {
+                    if (i==0) {
                         String CharAt = "" + myStr.charAt(i);
                         result = result.concat(CharAt.toUpperCase()) ;
-                    }
-                    else if (myStr.charAt(i-1) == ' '){
+                    } else if (myStr.charAt(i-1) == ' ') {
                         String CharAt = "" + myStr.charAt(i);
                         result = result.concat(CharAt.toUpperCase()) ;
-                    }
-                    else{
+                    } else {
                         String CharAt = "" + myStr.charAt(i);
                         result = result.concat(CharAt.toLowerCase());
                     }
                 }
                 break;
         }
-
         return result;
     }
 
@@ -390,25 +387,13 @@ public class ConstructorUtil {
                 .concat(constructTransactionStatus(transactionStatus));
     }
 
-//    public static String processTemplate(Map<String, Object> data, String template){
-//        String message = "";
-//        try {
-//            FreeMarkerUtils freeMarkerUtils = new FreeMarkerUtils();
-//            message = freeMarkerUtils.processTemplate(mapRemoveSpecialCharacter(data), template);
-//        }catch (Exception e) {
-//            log.error("error while process template ", e);
-//        }
-//        return message;
-//    }
-
     public static Map<String, Object> mapRemoveSpecialCharacter(Map<String, Object> data){
         Map<String, Object> response = new HashMap<>();
-        for (Map.Entry s : data.entrySet()) {
-            String key = (String) s.getKey();
+
+        for (Map.Entry<String, Object> s : data.entrySet()) {
+            String key = s.getKey();
             response.put(key.replaceAll("[^a-zA-Z0-9]", ""), s.getValue());
         }
-
-//        log.info("data : {}", JsonBuilder.toJson(response));
 
         return response;
     }
