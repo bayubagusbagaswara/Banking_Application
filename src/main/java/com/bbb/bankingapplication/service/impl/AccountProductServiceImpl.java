@@ -83,9 +83,14 @@ public class AccountProductServiceImpl implements AccountProductService {
 
     @Override
     public void deleteAccountProduct(String productCodeNumber) {
-
         // soft delete manual, set deleted to false
+        // search product by code number
+        AccountProduct accountProduct = accountProductRepository.findProductByCodeNumber(productCodeNumber)
+                .orElseThrow(() -> new RuntimeException("Account Product not found with code number : [" + productCodeNumber + "]"));
 
+        accountProduct.setDeleted(true);
+
+        accountProductRepository.save(accountProduct);
     }
 
     private static AccountProductDTO mapToAccountProductDTO(AccountProduct accountProduct) {
