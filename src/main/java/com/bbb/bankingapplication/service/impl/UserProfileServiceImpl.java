@@ -12,7 +12,7 @@ import com.bbb.bankingapplication.repository.UserProfileRepository;
 import com.bbb.bankingapplication.service.UserProfileService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Service
 public class UserProfileServiceImpl implements UserProfileService {
@@ -36,11 +36,13 @@ public class UserProfileServiceImpl implements UserProfileService {
 
         Language language = Language.valueOf(request.getLanguage().toUpperCase());
         userProfile.setLanguage(language);
-        LocalDateTime now = LocalDateTime.now();
+
+        Instant now = Instant.now();
         userProfile.setCreatedAt(now);
         userProfile.setUpdatedAt(now);
 
         userProfileRepository.save(userProfile);
+
         return CreateUserProfileResponse.builder()
                 .id(userProfile.getId())
                 .cif(userProfile.getCif())
