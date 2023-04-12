@@ -13,7 +13,10 @@ import java.math.BigDecimal;
  */
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "account_product")
+@Table(name = "account_product", uniqueConstraints = {
+        @UniqueConstraint(name = "product_code_number_unique", columnNames = "product_code_number"),
+        @UniqueConstraint(name = "product_code_name_unique", columnNames = "product_code_name")
+})
 @Data
 @Builder
 @NoArgsConstructor
