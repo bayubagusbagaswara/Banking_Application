@@ -6,7 +6,7 @@ import com.bbb.bankingapplication.repository.BankRepository;
 import com.bbb.bankingapplication.service.BankService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +34,7 @@ public class BankServiceImpl implements BankService {
                 .swiftCode(request.getSwiftCode())
                 .build();
 
-        LocalDateTime now = LocalDateTime.now();
+        Instant now = Instant.now();
         bank.setCreatedAt(now);
         bank.setUpdatedAt(now);
 
@@ -83,7 +83,12 @@ public class BankServiceImpl implements BankService {
     public void deleteBank(Long bankId) {
         Bank bank = bankRepository.findById(bankId)
                 .orElseThrow(() -> new RuntimeException("Bank not found with id : [" + bankId + "]"));
-        bankRepository.delete(bank);
+
+        // soft delete
+        bank.setDeleted(true);
+        bank.setDeletedAt(Instant.now());
+
+        bankRepository.save(bank);
     }
 
     private static CreateBankResponse mapToBankResponse(Bank bank) {
