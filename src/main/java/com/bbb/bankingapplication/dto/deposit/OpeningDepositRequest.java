@@ -17,6 +17,9 @@ public class OpeningDepositRequest implements Serializable {
 
     private static final long serialVersionUID = -3014706647039717878L;
 
+    // DATA USER
+    private Long userProfileId;
+
     @NotBlank(message = "M-PIN must not be blank")
     private String mPin;
 
