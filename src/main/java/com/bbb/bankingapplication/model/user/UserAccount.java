@@ -69,6 +69,9 @@ public class UserAccount extends UserAudit {
     @Column(name = "balance_total_formatted")
     private String balanceTotalFormatted; // 100.000,00
 
+    @Column(name = "account_owner_name")
+    private String accountOwnerName;
+
     // di sini ada field AdditionalData
     // dimana di AdditionalData ada info tentang balance (saldo)
     // berarti harus nambah sendiri
