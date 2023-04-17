@@ -50,3 +50,8 @@ response.setTransactionDate(DateUtil.convertDate(transaction.getTransactionDate(
     // if("00".equals(..string..)) atau pengecekan untuk konstanta itu paling kiri, sedangkan variable di kanan
 
 autosave adalaha produk tabungan dengan sistem terjadwal, langsung dipotong
+
+# Format String
+
+- From 100000 => to Rp100.000
+- From 100000 => to Rp.100.000
