@@ -53,8 +53,8 @@ public class ZiswafAmil extends UserAudit {
     @Column(name = "VA_NUMBER", length = 255)
     private String vaNumber;
 
-    @Column(name = "isdeleted", nullable = false, columnDefinition = "DEFAULT '0'")
-    private boolean isDeleted;
+//    @Column(name = "isdeleted", nullable = false, columnDefinition = "DEFAULT '0'")
+//    private boolean isDeleted;
 
     @Column(name = "IMAGE", length = 255)
     private String image;
@@ -62,7 +62,7 @@ public class ZiswafAmil extends UserAudit {
     @Column(name = "AMIL_INIIAL", length = 255)
     private String amilInitial;
 
-    @Column(name = "STATUS", nullable = false, columnDefinition = "DEFAULT '1'")
-    private Boolean status;
+//    @Column(name = "STATUS", nullable = false, columnDefinition = "DEFAULT '1'")
+//    private Boolean status;
 
 }
