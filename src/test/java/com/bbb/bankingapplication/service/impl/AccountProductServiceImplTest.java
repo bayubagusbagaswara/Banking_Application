@@ -4,6 +4,8 @@ import com.bbb.bankingapplication.dto.AccountProductDTO;
 import com.bbb.bankingapplication.dto.CreateAccountProductRequest;
 import com.bbb.bankingapplication.service.AccountProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -30,7 +32,7 @@ class AccountProductServiceImplTest {
                 .productCodeNumber("6001")
                 .productCodeName("EASY_WADIAH")
                 .productTitle("Easy Wadiah")
-                .productDescription("Jaga harta kamu tetap murni dengan prinsip tanpa riba")
+                .productDescription("{\"bobot\":\"190 - 230 Kg\",\"flag\":\"LIST_SAPI_KERBAU\",\"email\":\"reza.fajar@rumahzakat.org;erma.zulhijjah@rumahzakat.org\"}")
                 .productShortDescription("Bebas biaya administrasi bulanan. Fasilitas Kartu GPN & Visa. Gratis tarik tunai diseluruh ATM BSI & ATM Mandiri. Bebas biaya transaksi diseluruh EDC Bank Mandiri, Bank Indonesia, dan EDC Berlogo Prima.")
                 .minimumBalance(new BigDecimal(20000))
                 .minimumInitialDeposit(new BigDecimal(50000))
@@ -174,12 +176,17 @@ class AccountProductServiceImplTest {
     }
 
     @Test
-    void getAccountProductByCodeName() {
+    void getAccountProductByCodeName() throws JSONException {
         String productCodeName = "EASY_WADIAH";
         AccountProductDTO response = accountProductService.getAccountProductByCodeName(productCodeName);
 
         log.info("Balance: {}", response.getMinimumBalance()); // 20000.00
         log.info("Created At: {}", response.getCreatedAt()); // 2023-04-11T04:44:59.584555Z
+        String description = response.getProductDescription();
+
+        // convert to json
+        JSONObject descriptionJson = new JSONObject(description);
+        log.info("Bobot : {}", descriptionJson.getString("bobot"));
     }
 
     @Test
