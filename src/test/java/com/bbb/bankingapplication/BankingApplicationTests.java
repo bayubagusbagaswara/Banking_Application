@@ -94,6 +94,15 @@ class BankingApplicationTests {
 	@Test
 	void testFormattedTransactionDescription3() {
 		// Format = Rp.10.000-DonasiBantuanCovid
+		String raw = "Donasi Bantuan Covid";
+		String value = "10000";
+
+		StringBuilder a = new StringBuilder();
+		a.append("Rp.")
+				.append(value, 0, value.length() - 3)
+				.append(".");
+
+		System.out.println(String.valueOf(a));
 	}
 
 	@Test
@@ -137,7 +146,7 @@ class BankingApplicationTests {
 
 	private static String getString(String raw) {
 		StringBuilder stringBuilder = new StringBuilder();
-		String s = raw.replaceAll("&", "dan").replaceAll(" ", "");
+		String s = raw.replaceAll("&", "dan").replaceAll("\\s", "");
 
 		return String.valueOf(stringBuilder.append(s).append("-").append(s));
 	}
@@ -170,7 +179,7 @@ class BankingApplicationTests {
 
 		JSONObject inputJson = new JSONObject(input);
 		System.out.println(inputJson.toString());
-		String bobot = inputJson.getString("bobot").toLowerCase().replaceAll(" ", "");
+		String bobot = inputJson.getString("bobot").toLowerCase().replaceAll("\\s", "");
 		System.out.println(bobot);
 	}
 
