@@ -28,7 +28,7 @@ public abstract class DateAudit implements Serializable {
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private Instant updatedAt;
 
     @Column(name = "deleted_at")
