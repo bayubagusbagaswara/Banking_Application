@@ -49,6 +49,11 @@ public class AmilServiceImpl implements AmilService {
         return mapToAmilDTO(amil);
     }
 
+    @Override
+    public List<AmilDTO> getAmilList() {
+        return null;
+    }
+
     private static AmilDTO mapToAmilDTO(Amil amil) {
         return AmilDTO.builder()
                 .id(String.valueOf(amil.getId()))
