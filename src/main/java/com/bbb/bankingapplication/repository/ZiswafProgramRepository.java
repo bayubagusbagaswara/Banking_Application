@@ -1,6 +1,6 @@
 package com.bbb.bankingapplication.repository;
 
-import com.bbb.bankingapplication.model.ZiswafProgram;
+import com.bbb.bankingapplication.model.ziswaf.ZiswafProgram;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

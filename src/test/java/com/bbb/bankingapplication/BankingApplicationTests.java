@@ -1,8 +1,6 @@
 package com.bbb.bankingapplication;
 
 import com.bbb.bankingapplication.dto.ziswaf.ZiswafProductDTO;
-import com.bbb.bankingapplication.model.ZiswafProduct;
-import com.jayway.jsonpath.internal.filter.ValueNodes;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
