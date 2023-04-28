@@ -9,6 +9,7 @@ public interface AmilService {
     AmilDTO createAmil(CreateAmilRequest createAmilRequest);
 
     // get amil
+    AmilDTO getAmilByAmilCode(String amilCode);
 
     // get amil list
 
