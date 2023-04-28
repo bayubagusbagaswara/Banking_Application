@@ -42,6 +42,13 @@ public class AmilServiceImpl implements AmilService {
         return mapToAmilDTO(amil);
     }
 
+    @Override
+    public AmilDTO getAmilByAmilCode(String amilCode) {
+        Amil amil = amilRepository.findByAmilCode(amilCode)
+                .orElseThrow(() -> new RuntimeException("Amil not found with code : [" + amilCode + "]"));
+        return mapToAmilDTO(amil);
+    }
+
     private static AmilDTO mapToAmilDTO(Amil amil) {
         return AmilDTO.builder()
                 .id(String.valueOf(amil.getId()))
