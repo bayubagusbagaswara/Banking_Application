@@ -8,6 +8,8 @@ import com.bbb.bankingapplication.service.ZiswafCategoryService;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ZiswafCategoryServiceImpl implements ZiswafCategoryService {
@@ -46,5 +48,12 @@ public class ZiswafCategoryServiceImpl implements ZiswafCategoryService {
                 .updatedBy(ziswafCategory.getUpdatedBy())
                 .updatedAt(ziswafCategory.getUpdatedAt())
                 .build();
+    }
+
+    private static List<ZiswafCategoryDTO> mapToZiswafCategoryDTOList(List<ZiswafCategory> ziswafCategoryList) {
+        return ziswafCategoryList.stream()
+                .map(ZiswafCategoryServiceImpl::mapToZiswafCategoryDTO)
+                .collect(Collectors.toList());
+
     }
 }
