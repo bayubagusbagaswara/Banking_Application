@@ -1,0 +1,72 @@
+[
+  {
+    "code": "ZISWAF_VA",
+    "label": "Ziswaf Virtual Account",
+    "description": "VA"
+  },
+  {
+    "code": "ZISWAF_ZAKAT",
+    "label": "Zakat",
+    "description": "Ziswaf Zakat"
+  },
+  {
+    "code": "ZISWAF_INFAQ",
+    "label": "Infaq",
+    "description": "Ziswaf Infaq"
+  },
+  {
+    "code": "ZISWAF_WAKAF",
+    "label": "Wakaf",
+    "description": "Ziswaf Wakaf"
+  },
+  {
+    "code": "ZISWAF_FIDYAH",
+    "label": "Fidyah",
+    "description": "Ziswaf Fidyah"
+  },
+  {
+    "code": "ZISWAF_FITRAH",
+    "label": "Zakat Fitrah",
+    "description": "Ziswaf Zakat Fitrah"
+  },
+  {
+    "code": "ZISWAF_QURBAN",
+    "label": "Beli Hewan Qurban",
+    "description": "Ziswaf Beli Hewan Qurban"
+  },
+  {
+    "code": "ZISWAF_THR_ANAK_YATIM",
+    "label": "THR Anak Yatim",
+    "description": "Ziswaf THR Anak Yatim"
+  },
+  {
+    "code": "ZISWAF_DONASI",
+    "label": "Donasi",
+    "description": "Ziswaf Donasi"
+  },
+  {
+    "code": "ZISWAF_WARTEG_MOBILE",
+    "label": "Warteg Mobile",
+    "description": "Ziswaf Warteg Mobile"
+  },
+  {
+    "code": "ZISWAF_PAKET_PUASA",
+    "label": "Paket Berbuka & Sahur",
+    "description": "Ziswaf Paket Berbuka dan Sahur"
+  },
+  {
+    "code": "ZISWAF_WAKAF_UANG",
+    "label": "Melalui Uang",
+    "description": "Ziswaf Wakaf Melalui Uang"
+  },
+  {
+    "code": "ZISWAF_WAKAF_SELAMANYA",
+    "label": "Selamanya",
+    "description": "Ziswaf Wakaf Selamanya"
+  },
+  {
+    "code": "ZISWAF_WAKAF_TEMPORER",
+    "label": "Uang Temporer",
+    "description": "Ziswaf Wakaf Uang Temporer"
+  }
+]
