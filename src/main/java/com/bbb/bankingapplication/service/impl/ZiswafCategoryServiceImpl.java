@@ -1,6 +1,7 @@
 package com.bbb.bankingapplication.service.impl;
 
 import com.bbb.bankingapplication.dto.ziswaf.category.CreateZiswafCategoryRequest;
+import com.bbb.bankingapplication.dto.ziswaf.category.UpdateZiswafCategoryRequest;
 import com.bbb.bankingapplication.dto.ziswaf.category.ZiswafCategoryDTO;
 import com.bbb.bankingapplication.model.ziswaf.ZiswafCategory;
 import com.bbb.bankingapplication.repository.ZiswafCategoryRepository;
@@ -37,6 +38,37 @@ public class ZiswafCategoryServiceImpl implements ZiswafCategoryService {
         return mapToZiswafCategoryDTO(ziswafCategory);
     }
 
+    @Override
+    public ZiswafCategoryDTO getZiswafCategoryByCode(String code) {
+        ZiswafCategory ziswafCategory = ziswafCategoryRepository.findByCode(code)
+                .orElseThrow(() -> new RuntimeException("Ziswaf Category not found with code : [" + code + "]"));
+        return mapToZiswafCategoryDTO(ziswafCategory);
+    }
+
+    @Override
+    public ZiswafCategoryDTO updateZiswafCategoryByCode(String code, UpdateZiswafCategoryRequest request) {
+        ZiswafCategory ziswafCategory = ziswafCategoryRepository.findByCode(code)
+                .orElseThrow(() -> new RuntimeException("Ziswaf Category not found with code : [" + code + "]"));
+        ziswafCategory.setCode(request.getCode());
+        ziswafCategory.setLabel(request.getLabel());
+        ziswafCategory.setDescription(request.getDescription());
+        ziswafCategory.setUpdatedAt(Instant.now());
+
+        ziswafCategoryRepository.save(ziswafCategory);
+
+        return mapToZiswafCategoryDTO(ziswafCategory);
+    }
+
+    @Override
+    public void deleteZiswafCategoryByCode(String code) {
+        ZiswafCategory ziswafCategory = ziswafCategoryRepository.findByCode(code)
+                .orElseThrow(() -> new RuntimeException("Ziswaf Category not found with code : [" + code + "]"));
+
+        ziswafCategory.setDeleted(true);
+
+        ziswafCategoryRepository.save(ziswafCategory);
+    }
+
     private static ZiswafCategoryDTO mapToZiswafCategoryDTO(ZiswafCategory ziswafCategory) {
         return ZiswafCategoryDTO.builder()
                 .id(String.valueOf(ziswafCategory.getId()))
@@ -54,6 +86,6 @@ public class ZiswafCategoryServiceImpl implements ZiswafCategoryService {
         return ziswafCategoryList.stream()
                 .map(ZiswafCategoryServiceImpl::mapToZiswafCategoryDTO)
                 .collect(Collectors.toList());
-
     }
+
 }
