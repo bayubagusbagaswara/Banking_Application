@@ -1,5 +1,6 @@
 package com.bbb.bankingapplication.dto.ziswaf;
 
+import com.bbb.bankingapplication.dto.ziswaf.category.ZiswafCategoryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
