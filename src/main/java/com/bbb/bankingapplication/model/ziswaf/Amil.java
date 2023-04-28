@@ -8,7 +8,8 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "amil", uniqueConstraints = {
-        @UniqueConstraint(name = "amil_code_unique", columnNames = "amil_code")
+        @UniqueConstraint(name = "amil_code_unique", columnNames = "amil_code"),
+        @UniqueConstraint(name = "amil_initial_unique", columnNames = "amil_initial")
 })
 @Data
 @Builder
