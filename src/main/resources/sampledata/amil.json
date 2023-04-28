@@ -1,0 +1,37 @@
+[
+  {
+    "amilCode": "AMIL001",
+    "amilName": "BSI Maslahat",
+    "amilInitial": "BM",
+    "address": "Jl. Pengadegan Utara IV No 1A Pancoran Jakarta Selatan",
+    "image": "https://bsi-maslahat.png"
+  },
+  {
+    "amilCode": "AMIL002",
+    "amilName": "LAZISNU",
+    "amilInitial": "LN",
+    "address": "Jl. Kramat Raya No 164 Jakarta Pusat",
+    "image": "https://lazisnu.png"
+  },
+  {
+    "amilCode": "AMIL003",
+    "amilName": "LAZISMU",
+    "amilInitial": "LM",
+    "address": "Jl. Menteng Raya No. 62 Jakarta Pusat",
+    "image": "https://lazismu.png"
+  },
+  {
+    "amilCode": "AMIL004",
+    "amilName": "Dompet Dhuafa",
+    "amilInitial": "LBZ",
+    "address": "Ini adalah alamat",
+    "image": "https://dompet-dhuafa.png"
+  },
+  {
+    "amilCode": "AMIL005",
+    "amilName": "Rumah Zakat",
+    "amilInitial": "RM",
+    "address": "Ini adalah alamat",
+    "image": "https://rumah-zakat.png"
+  }
+]
