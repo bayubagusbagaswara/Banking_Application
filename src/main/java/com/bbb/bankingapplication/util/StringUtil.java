@@ -64,17 +64,17 @@ public class StringUtil {
         } else if (sentence==null) {
             return "";
         }
-        String words[] = sentence.replaceAll("\\s+", " ").trim().split(" ");
-        String newSentence = "";
+        String[] words = sentence.replaceAll("\\s+", " ").trim().split(" ");
+        StringBuilder newSentence = new StringBuilder();
         if(sentence!=null) {
             for (String word : words) {
                 for (int i = 0; i < word.length(); i++)
-                    newSentence = newSentence + ((i == 0) ? word.substring(i, i + 1).toUpperCase() :
+                    newSentence.append((i == 0) ? word.substring(i, i + 1).toUpperCase() :
                             (i != word.length() - 1) ? word.substring(i, i + 1).toLowerCase() : word.substring(i, i + 1).toLowerCase().toLowerCase() + " ");
             }
-            newSentence = newSentence.substring(0,newSentence.length()-1);
+            newSentence = new StringBuilder(newSentence.substring(0, newSentence.length() - 1));
         }
-        return newSentence;
+        return newSentence.toString();
     }
 
     public static String upperCaseFirstWord(String sentence) {
