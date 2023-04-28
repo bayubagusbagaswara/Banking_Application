@@ -120,6 +120,6 @@ public class ZiswafProduct extends UserAudit {
     private List<ZiswafContentParameter> ziswafContentList;
 
     @Transient
-    private ZiswafAmil ziswafAmil;
+    private Amil amil;
 
 }
