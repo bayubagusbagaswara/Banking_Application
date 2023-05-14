@@ -55,3 +55,7 @@ autosave adalaha produk tabungan dengan sistem terjadwal, langsung dipotong
 
 - From 100000 => to Rp100.000
 - From 100000 => to Rp.100.000
+
+# Tampilan
+
+- Kita bikin menu sederhana untuk ziswaf 
