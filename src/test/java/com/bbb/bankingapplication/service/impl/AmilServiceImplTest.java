@@ -3,6 +3,7 @@ package com.bbb.bankingapplication.service.impl;
 import com.bbb.bankingapplication.dto.ziswaf.amil.AmilDTO;
 import com.bbb.bankingapplication.dto.ziswaf.amil.CreateAmilRequest;
 import com.bbb.bankingapplication.service.AmilService;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,30 @@ class AmilServiceImplTest {
 
         AmilDTO amil = amilService.createAmil(amilRequest);
 
+        assertNotNull(amil.getId());
+        assertNotNull(amil.getCreatedAt());
+    }
+
+    @Test
+    void createAmil2() {
+        CreateAmilRequest amilRequest = CreateAmilRequest.builder()
+                .amilCode("")
+                .amilName("")
+                .amilInitial("")
+                .address("")
+                .image("")
+                .build();
+
+        AmilDTO amil = amilService.createAmil(amilRequest);
+        assertNotNull(amil.getId());
+        assertNotNull(amil.getCreatedAt());
+    }
+
+    @Test
+    void createAmil3() {
+        CreateAmilRequest amilRequest = CreateAmilRequest.builder().build();
+
+        AmilDTO amil = amilService.createAmil(amilRequest);
         assertNotNull(amil.getId());
         assertNotNull(amil.getCreatedAt());
     }
